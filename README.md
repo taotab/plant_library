@@ -26,3 +26,6 @@ Taken 5 plants.
 - Do 3D window?
 - Interactive plants parts click on photo details?
 
+>**[Note]** Remotely access to trihms pc
+> Using git here, (pw- *tp*) for ssh key (personal...)
+
