@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='solution.css') }}"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="index.html"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <span class="fs-4">Simple header</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            </ul>
+        </header>
+    </div>
+
+
+    <!-- jhkhkhk -->
+    <h1>Classification:</h1>
+    <table class="table table-striped w-auto p-3">
+
+        <tbody>
+            <tr>
+                <th scope="row">Kingdom</th>
+                <td>Mark</td>
+            </tr>
+            <tr>
+                <th scope="row">Phylum</th>
+                <td>Jacob</td>
+            </tr>
+            <tr>
+                <th scope="row">Class</th>
+                <td colspan="2">Larry the Bird</td>
+            </tr>
+
+            <th scope="row">Subclass</th>
+            <td colspan="2">Larry the Bird</td>
+            </tr>
+
+            <th scope="row">Order</th>
+            <td colspan="2">Larry the Bird</td>
+            </tr>
+
+            <th scope="row">Family</th>
+            <td colspan="2">Larry the Bird</td>
+            </tr>
+
+            <th scope="row">Genus</th>
+            <td colspan="2">Larry the Bird</td>
+            </tr>
+
+            <th scope="row">Species</th>
+            <td colspan="2">Larry the Bird</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+    <img src="./plants_img/Stevia.webp" class="img-fluid" alt="...">
+    <br>
+    <br>
+
+    <dl class="row">
+        <dt class="col-sm-3">Description</dt>
+        <dd class="col-sm-9">
+            <p>With its steviol glycoside extracts having up to 300 times the sweetness of sugar,stevia has garnered
+                attention with the rise in demand for low-carbohydrate, low-sugar food alternatives.</p>
+
+            <p>Because stevia has a negligible effect on blood glucose, it is attractive as a natural sweetener to
+                people on carbohydrate-controlled diets.</p>
+        </dd>
+
+        <dt class="col-sm-3">Benefits</dt>
+        <dd class="col-sm-9">
+            <ul>
+                <li>Stevia is a natural sweetener that is 200 to 300 times sweeter than sugar, but has no carbohydrates,
+                    calories, or artificial ingredients.</li>
+
+            </ul>
+
+        </dd>
+
+        <dt class="col-sm-3">Another term</dt>
+        <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
+
+        <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+        <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+
+        <dt class="col-sm-3">Nesting</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+                <dt class="col-sm-4">Nested definition list</dt>
+                <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your
+                    definition list.</dd>
+            </dl>
+        </dd>
+    </dl>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+    <!-- {% block content %}{% endblock %} -->
+</body>
+
+</html>

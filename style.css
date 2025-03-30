@@ -1,0 +1,47 @@
+.col {
+    text-align: center;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    /* text-decoration: none; */
+    /* Ensure no underline on hover */
+    /* color: black; */
+    /* Keep the text black */
+    box-shadow: 0 0 20px green
+        /* Add a glow effect */
+}
+
+a:active {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    width: 100%;
+    /* Ensure cards take full width of the column */
+    max-width: 300px;
+    /* Set a maximum width for the cards */
+    height: 400px;
+    /* Set a fixed height for the cards */
+    margin: auto;
+    /* Center the cards horizontally */
+}
+
+.card img {
+    object-fit: contain;
+    height: 200px;
+    /* Set a fixed height for the image */
+    width: 100%;
+    /* Ensure the image takes full width of the card */
+}
+
+.table {
+    margin-left: 50px;
+    ;
+}
