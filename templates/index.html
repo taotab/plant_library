@@ -5,8 +5,7 @@
 <div class="row row-cols-1 row-cols-md-4 g-4">
     <div class="col">
         <div class="card h-100 border-0">
-            <a href="{{ url_for('aloevera') }}">
-                <!-- <img src="../static/plants_img/aloe_vera.webp" class="card-img-top" alt="..."> -->
+            <a href="{{ url_for('plant_page', plant_name='aloevera') }}">
                 <img src="{{ url_for('static', filename='plants_img/aloe_vera.webp') }}" alt="...">
 
                 <div class="card-body">
@@ -17,10 +16,7 @@
     </div>
     <div class="col">
         <div class="card h-100 border-0">
-            <!-- <a href="./chamomile.html"> -->
-            <!-- <a href="{{ url_for('chamomile') }}"> -->
             <a href="{{ url_for('plant_page', plant_name='chamomile') }}">
-
 
                 <img src="{{ url_for('static', filename='plants_img/chamomile.webp') }}" alt="...">
                 <div class="card-body">
@@ -31,7 +27,8 @@
     </div>
     <div class="col">
         <div class="card h-100 border-0">
-            <a href="{{ url_for('fenugreek') }}">
+            <a href="{{ url_for('plant_page', plant_name='fenugreek') }}">
+
                 <img src="{{ url_for('static', filename='plants_img/fenugreek_methi.webp') }}" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Fenugreek/Methi</h5>
@@ -41,7 +38,8 @@
     </div>
     <div class="col">
         <div class="card h-100 border-0">
-            <a href="{{ url_for('stevia') }}">
+            <a href="{{ url_for('plant_page', plant_name='stevia') }}">
+
                 <img src="{{ url_for('static', filename='plants_img/Stevia.webp') }}" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Stevia</h5>
@@ -51,7 +49,7 @@
     </div>
     <div class="col">
         <div class="card h-100 border-0">
-            <a href="{{ url_for('tulsi') }}">
+            <a href="{{ url_for('plant_page', plant_name='tulsi') }}">
 
                 <img src="{{ url_for('static', filename='plants_img/tulsi.jpg') }}" alt="...">
                 <div class="card-body">

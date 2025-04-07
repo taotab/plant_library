@@ -29,3 +29,8 @@ Taken 5 plants.
 >**[Note]** Remotely access to trihms pc
 > Using git here, (pw- *tp*) for ssh key (personal...)
 
+## 📜 Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for details on updates and version history.
+
+
