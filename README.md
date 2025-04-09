@@ -19,6 +19,7 @@ Taken 5 plants.
 - How to use it
 - Maybe small animation (hover effect/faze)
 - *About page: simple page about ayurveda/project.
+- Login user page (sessions, sqlite database, etc)
 
 ### Things to consider??
 
