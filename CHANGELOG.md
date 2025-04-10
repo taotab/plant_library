@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file.
 This file follows a simplified version of [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).  
 Dates are in `YYYY-MM-DD` format.
 
+## Purpose: Record of what has changed over time.
 ---
+
 
 ## [Unreleased]
 
@@ -12,6 +14,17 @@ Dates are in `YYYY-MM-DD` format.
 - Placeholder section for future planned features.
 - Dynamic routing instead of hardcoding for every page's route in flask.
 - `README.md` for project overview.
+- Added login feature, using session from flask.
+
+---
+
+## [0.1.2] - 2025-04-10
+
+### Added
+- Login and logout Page.
+
+### Fixed
+- Login credential checks using Flask Session method now for better security.
 
 ---
 

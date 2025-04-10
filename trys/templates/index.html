@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h2>How are u</h2>
+
+{% if logged_msg %}
+<p class="logged"><strong>Hello:</strong> {{ logged_msg }}
+    {% endif %}
+
+    {% endblock %}
