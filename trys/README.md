@@ -15,5 +15,3 @@
 - Who it's for (like: "A simple Flask app to help beginners understand session handling").
 
 - Optional: screenshots, how to use, examples.
-
-> 🧠 For your friend, this is essential. It's the “homepage” of the project.

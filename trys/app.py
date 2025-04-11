@@ -30,6 +30,19 @@ def login3():
     return render_template('login3.html', error=error)
 
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    error = None
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        else:
+            session['username'] = 'admin'    # store username in session (for later use)
+            return redirect(url_for('index'))
+            # return redirect('http://127.0.0.1:5000/')  # also works,, as its for default root link path page. ie. link of index() generating page
+    return render_template('register.html')
+
+
 @app.route('/logout')
 def logout():
     # remove the username from the session if it's there
