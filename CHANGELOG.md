@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 This file follows a simplified version of [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).  
 Dates are in `YYYY-MM-DD` format.
 
-## Purpose: Record of what has changed over time.
+## Purpose: Record of what has changed over time. (Added/changed/removed/fixed)
 ---
 
 
