@@ -25,6 +25,15 @@
 
 - Logout page added, link in header navbar
 
+## Regex instead of for loops:
+
+- for password conformation checks like similar, is capital or special characters, digits is there ,,, all functions check, usual method is the for loop or while,, check each character and flag...
+- Why only use in flask? Javascript and html can be quick and ui/ux design.. but can be bypassed, flask check backend is better and secure.
+- Why use regex? For character comparisions, its better, simple and less code..
+- **What's the logic? idk, must do research. REGEX vs FOR LOOPs**
+    1. for more info on regex use: https://www.w3schools.com/python/python_regex.asp
+    2. (regular expression), like a pattern searching regex engine, to search in a given string.
+
 ## Next additions:
 
 - Make password repeat confirmation check *(see my previous btech project)*
