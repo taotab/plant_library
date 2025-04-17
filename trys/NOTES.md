@@ -21,9 +21,12 @@
         print("👀 Current working dir:", os.getcwd())
         ```
 
+## Added:
+
+- Logout page added, link in header navbar
 
 ## Next additions:
 
-- Make logout page.. *(now works for manually add link)
+- Make password repeat confirmation check *(see my previous btech project)*
 - Edit options like remove users, edit user credentials
 - More robustness, try error catches and comment prints for better Security and debug.

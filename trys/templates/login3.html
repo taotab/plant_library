@@ -16,6 +16,11 @@
 
 </form>
 
+<div class="mt-3 text-center">
+    <h5>If new, <a href="{{ url_for('register') }}">register here</a></h5>
+</div>
+
+
 {% if error %}
 <p class="error"><strong>Error:</strong> {{ error }}
     {% endif %}
