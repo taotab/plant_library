@@ -24,22 +24,24 @@ a:active {
 
 .card {
     width: 100%;
-    /* Ensure cards take full width of the column */
-    max-width: 300px;
-    /* Set a maximum width for the cards */
+    max-width: 400px;
     height: 400px;
-    /* Set a fixed height for the cards */
     margin: auto;
-    /* Center the cards horizontally */
 }
 
 .card img {
-    object-fit: contain;
-    height: 200px;
-    /* Set a fixed height for the image */
+    object-fit: cover;
+    height: 250px;
     width: 100%;
-    /* Ensure the image takes full width of the card */
 }
+
+.card-body {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .table {
     margin-left: 50px;
