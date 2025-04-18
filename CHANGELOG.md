@@ -18,10 +18,25 @@ Dates are in `YYYY-MM-DD` format.
 
 ---
 
+## [0.1.3] - 2025-04-17
+
+### Added
+- Register Page.
+- Message greeting in homepage of username using session.
+- All error handling messages regarding password and username credentials during register page.
+- Pop message in html before logout confirmation
+
+### Fixed
+- Password confirmation matching in flask backend for better security.
+- Password strength checker using regex search function. (concise)
+- Existing username check (database handling).
+
+---
+
 ## [0.1.2] - 2025-04-10
 
 ### Added
-- Login and logout Page.
+- Login and logout button.
 
 ### Fixed
 - Login credential checks using Flask Session method now for better security.

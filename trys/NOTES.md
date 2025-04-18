@@ -24,8 +24,9 @@
 ## Added:
 
 - Logout page added, link in header navbar
+- Password confirmation, strength checker, existing username check.
 
-## Regex instead of for loops:
+## Regex instead of for loops for Passwords:
 
 - for password conformation checks like similar, is capital or special characters, digits is there ,,, all functions check, usual method is the for loop or while,, check each character and flag...
 - Why only use in flask? Javascript and html can be quick and ui/ux design.. but can be bypassed, flask check backend is better and secure.
@@ -36,6 +37,7 @@
 
 ## Next additions:
 
-- Make password repeat confirmation check *(see my previous btech project)*
-- Edit options like remove users, edit user credentials
+- Do i add hash password for secure storage in database user credentials? *(see my previous btech project)*
+- Edit options like remove users, edit user credentials after Login
 - More robustness, try error catches and comment prints for better Security and debug.
+- Add plant option? like forms *'upload file'* thingy??
