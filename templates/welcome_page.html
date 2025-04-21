@@ -1,0 +1,496 @@
+{% extends 'layout.html' %}
+{% set no_background = True %}
+{% block content %}
+<!-- Start your project here-->
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+    <div class="col-md-6 p-lg-5 mx-auto my-5">
+        <h1 class="display-3 fw-bold">Designed for engineers</h1>
+        <h3 class="fw-normal text-muted mb-3">Build anything you want with Aperture</h3>
+        <div class="d-flex gap-3 justify-content-center lead fw-normal">
+            <a class="icon-link" href="#">
+                Learn more
+                <svg class="bi">
+                    <use xlink:href="#chevron-right"></use>
+                </svg>
+            </a>
+            <a class="icon-link" href="#">
+                Buy
+                <svg class="bi">
+                    <use xlink:href="#chevron-right"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+
+
+
+
+<div class="position-relative overflow-hidden p-3 p-md-1 m-md-1 text-center bg-body-dark">
+    <div class="col-md-6 p-lg-5 mx-auto my-1">
+        <h1 class="display-3 fw-bold">Designed for engineers</h1>
+        <h3 class="fw-normal mb-3">Build anything you want with Aperture</h3>
+        <div class="d-flex gap-5 justify-content-center lead fw-normal">
+            <a class="icon-link" href="#">
+                Learn more
+            </a>
+            <a class="icon-link" href="#">
+                Buy
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5 text-center text-white">
+    <div class="mx-auto" style="max-width: 800px;">
+        <h5 class="lh-lg fw-normal">This is Welcome Page. Your one-stop destination for a diverse range of
+            plant types.
+            Ranging from
+            trees,
+            shrubs, vines, grasses, ground covers, ornamental pot plants, hedges, and aquatic plants. Globe
+            Plants
+            cater to all gardening and landscaping styles. Explore our extensive library today and find the
+            plant
+            types that best suit your project.</h5>
+    </div>
+</div>
+
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active"
+            aria-current="true"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item">
+            <img class="bd-placeholder-img" width="100%" height="100%"
+                src="{{ url_for('static', filename='img/cover_img.jpeg') }}" aria-hidden="true"
+                preserveAspectRatio="xMidYMid slice">
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+            </svg>
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>Example headline.</h1>
+                    <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.
+                    </p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="bd-placeholder-img" width="100%" height="100%"
+                src="{{ url_for('static', filename='plants_img/tulsi.jpg') }}" aria-hidden="true"
+                preserveAspectRatio="xMidYMid slice">
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+            </svg>
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Another example headline.</h1>
+                    <p>Some representative placeholder content for the second slide of the carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item active">
+            <img class="bd-placeholder-img" width="100%" height="100%"
+                src="{{ url_for('static', filename='plants_img/chamomile.webp') }}" aria-hidden="true"
+                preserveAspectRatio="xMidYMid slice">
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+            </svg>
+            <div class="container">
+                <div class="carousel-caption text-end">
+                    <h1>One more for good measure.</h1>
+                    <p>Some representative placeholder content for the third slide of this carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Columns with icons</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+            <div
+                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <img width="1em" height="1em" src="{{ url_for('static', filename='logos/leaf1.png') }}">
+            </div>
+            <h3 class="fs-2">Featured title</h3>
+            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and
+                probably just keep going until we run out of words.</p>
+            <a href="#" class="icon-link">
+                Call to action
+                <svg class="bi" aria-hidden="true">
+                    <use xlink:href="#chevron-right"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="feature col">
+            <div
+                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                    <use xlink:href="#people-circle"></use>
+                </svg>
+            </div>
+            <h3 class="fs-2">Featured title</h3>
+            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and
+                probably just keep going until we run out of words.</p>
+            <a href="#" class="icon-link">
+                Call to action
+                <svg class="bi" aria-hidden="true">
+                    <use xlink:href="#chevron-right"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="feature col">
+            <div
+                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                    <use xlink:href="#toggles2"></use>
+                </svg>
+            </div>
+            <h3 class="fs-2">Featured title</h3>
+            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and
+                probably just keep going until we run out of words.</p>
+            <a href="#" class="icon-link">
+                Call to action
+                <svg class="bi" aria-hidden="true">
+                    <use xlink:href="#chevron-right"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container px-4 py-5" id="hanging-icons">
+    <h2 class="pb-2 border-bottom">Hanging icons</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+            <div
+                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                    <use xlink:href="#toggles2"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence
+                    and probably just keep going until we run out of words.</p>
+                <a href="#" class="btn btn-primary">
+                    Primary button
+                </a>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <div
+                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence
+                    and probably just keep going until we run out of words.</p>
+                <a href="#" class="btn btn-primary">
+                    Primary button
+                </a>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <div
+                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                    <use xlink:href="#tools"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence
+                    and probably just keep going until we run out of words.</p>
+                <a href="#" class="btn btn-primary">
+                    Primary button
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom">Features with title</h2>
+
+    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+        <div class="col d-flex flex-column align-items-start gap-2">
+            <h2 class="fw-bold">Left-aligned title explaining these awesome features</h2>
+            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto
+                it with another sentence and probably just keep going until we run out of words.</p>
+            <a href="#" class="btn btn-primary btn-lg">Primary button</a>
+        </div>
+
+        <div class="col">
+            <div class="row row-cols-1 row-cols-sm-2 g-4">
+                <div class="col d-flex flex-column gap-2">
+                    <div
+                        class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                        <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                            <use xlink:href="#collection"></use>
+                        </svg>
+                    </div>
+                    <h4 class="fw-semibold mb-0">Featured title</h4>
+                    <p>Paragraph of text beneath the heading to explain the heading.</p>
+                </div>
+
+                <div class="col d-flex flex-column gap-2">
+                    <div
+                        class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                        <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                            <use xlink:href="#gear-fill"></use>
+                        </svg>
+                    </div>
+                    <h4 class="fw-semibold mb-0">Featured title</h4>
+                    <p>Paragraph of text beneath the heading to explain the heading.</p>
+                </div>
+
+                <div class="col d-flex flex-column gap-2">
+                    <div
+                        class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                        <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                            <use xlink:href="#speedometer"></use>
+                        </svg>
+                    </div>
+                    <h4 class="fw-semibold mb-0">Featured title</h4>
+                    <p>Paragraph of text beneath the heading to explain the heading.</p>
+                </div>
+
+                <div class="col d-flex flex-column gap-2">
+                    <div
+                        class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                        <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                            <use xlink:href="#table"></use>
+                        </svg>
+                    </div>
+                    <h4 class="fw-semibold mb-0">Featured title</h4>
+                    <p>Paragraph of text beneath the heading to explain the heading.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="b-example-divider"></div>
+
+<!-- other thingsssssss -->
+<h2 class="display-5">Another headline</h2>
+<p class="lead">And an even wittier subheading.</p>
+<!-- other things..... -->
+
+
+<div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                src="{{ url_for('static', filename='logos/leaf3.png') }}" role="img" aria-label="Placeholder"
+                preserveAspectRatio="xMidYMid slice">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+
+            <h2 class="fw-normal">Heading</h2>
+            <p>Some representative placeholder content for the three columns of text below the carousel. This is the
+                first column.</p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                src="{{ url_for('static', filename='logos/leaf2.png') }}" role="img" aria-label="Placeholder"
+                preserveAspectRatio="xMidYMid slice">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+
+            <h2 class="fw-normal">Heading</h2>
+            <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second
+                column.</p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                src="{{ url_for('static', filename='logos/leaf4.png') }}" role="img" aria-label="Placeholder"
+                preserveAspectRatio="xMidYMid slice">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+
+            <h2 class="fw-normal">Heading</h2>
+            <p>And lastly this, the third column of representative placeholder content.</p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+</div>
+
+<!-- START THE FEATURETTES -->
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-body-secondary">It’ll
+                blow your mind.</span></h2>
+        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose
+            here.</p>
+    </div>
+    <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            src="{{ url_for('static', filename='plants_img/chamomile.webp') }}" width="500" height="500"
+            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+            preserveAspectRatio="xMidYMid slice">
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
+            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+
+    </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See
+                for yourself.</span></h2>
+        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this
+            layout would work with some actual real-world content in place.</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            src="{{ url_for('static', filename='plants_img/aloe_vera.webp') }}" width="500" height="500"
+            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+            preserveAspectRatio="xMidYMid slice">
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
+            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+
+    </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span
+                class="text-body-secondary">Checkmate.</span></h2>
+        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really
+            intended to be actually read, simply here to give you a better view of what this would look like with
+            some actual content. Your content.</p>
+    </div>
+    <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            src="{{ url_for('static', filename='plants_img/tulsi.jpg') }}" width="500" height="500"
+            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+            preserveAspectRatio="xMidYMid slice">
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
+            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+
+    </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="container px-4 py-5" id="icon-grid">
+    <h2 class="pb-2 border-bottom">Icon grid</h2>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+        <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+            <div>
+                <h3 class="fw-bold mb-0 fs-4">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+                <use xlink:href="#cpu-fill"></use>
+            </svg>
+            <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+                <use xlink:href="#calendar3"></use>
+            </svg>
+            <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+                <use xlink:href="#home"></use>
+            </svg>
+            <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+                <use xlink:href="#speedometer2"></use>
+            </svg>
+            <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+                <use xlink:href="#toggles2"></use>
+            </svg>
+            <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+                <use xlink:href="#geo-fill"></use>
+            </svg>
+            <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+                <use xlink:href="#tools"></use>
+            </svg>
+            <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /END THE FEATURETTES -->
+
+</div>
+{% endblock %}

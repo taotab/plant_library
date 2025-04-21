@@ -1,80 +1,82 @@
 {% extends 'layout.html' %}
+{% set no_background = True %}
+
 {% block content %}
 
-    <h1>Classification:</h1>
-    <table class="table table-striped w-auto p-3">
+<h1>Classification:</h1>
+<table class="table table-striped w-auto p-3">
 
-        <tbody>
-            <tr>
-                <th scope="row">Kingdom</th>
-                <td>Mark</td>
-            </tr>
-            <tr>
-                <th scope="row">Phylum</th>
-                <td>Jacob</td>
-            </tr>
-            <tr>
-                <th scope="row">Class</th>
-                <td colspan="2">Larry the Bird</td>
-            </tr>
-
-            <th scope="row">Subclass</th>
+    <tbody>
+        <tr>
+            <th scope="row">Kingdom</th>
+            <td>Mark</td>
+        </tr>
+        <tr>
+            <th scope="row">Phylum</th>
+            <td>Jacob</td>
+        </tr>
+        <tr>
+            <th scope="row">Class</th>
             <td colspan="2">Larry the Bird</td>
-            </tr>
+        </tr>
 
-            <th scope="row">Order</th>
-            <td colspan="2">Larry the Bird</td>
-            </tr>
+        <th scope="row">Subclass</th>
+        <td colspan="2">Larry the Bird</td>
+        </tr>
 
-            <th scope="row">Family</th>
-            <td colspan="2">Larry the Bird</td>
-            </tr>
+        <th scope="row">Order</th>
+        <td colspan="2">Larry the Bird</td>
+        </tr>
 
-            <th scope="row">Genus</th>
-            <td colspan="2">Larry the Bird</td>
-            </tr>
+        <th scope="row">Family</th>
+        <td colspan="2">Larry the Bird</td>
+        </tr>
 
-            <th scope="row">Species</th>
-            <td colspan="2">Larry the Bird</td>
-            </tr>
-        </tbody>
-    </table>
+        <th scope="row">Genus</th>
+        <td colspan="2">Larry the Bird</td>
+        </tr>
+
+        <th scope="row">Species</th>
+        <td colspan="2">Larry the Bird</td>
+        </tr>
+    </tbody>
+</table>
 
 
 
 
-    <img src="{{ url_for('static', filename='plants_img/chamomile.webp') }}" class="img-fluid" alt="...">
-    <br>
-    <br>
+<img src="{{ url_for('static', filename='plants_img/chamomile.webp') }}" class="img-fluid" alt="...">
+<br>
+<br>
 
-    <dl class="row">
-        <dt class="col-sm-3">Description</dt>
-        <dd class="col-sm-9">With a sweet, crisp, fruity and herbaceous fragrance, has long been used medicinally as a
-            remedy for problems regarding the digestive system.</dd>
+<dl class="row">
+    <dt class="col-sm-3">Description</dt>
+    <dd class="col-sm-9">With a sweet, crisp, fruity and herbaceous fragrance, has long been used medicinally as a
+        remedy for problems regarding the digestive system.</dd>
 
-        <dt class="col-sm-3">Benefits</dt>
-        <dd class="col-sm-9">
-            <p>It has a soothing and calming effect in the area of aromatherapy, used to end stress and aid in sleep.
-            </p>
+    <dt class="col-sm-3">Benefits</dt>
+    <dd class="col-sm-9">
+        <p>It has a soothing and calming effect in the area of aromatherapy, used to end stress and aid in sleep.
+        </p>
 
-            <p>The entire herb is used to treat common aches like toothache, earache, shoulder pain and neuralgia.</p>
+        <p>The entire herb is used to treat common aches like toothache, earache, shoulder pain and neuralgia.</p>
 
-        </dd>
+    </dd>
 
-        <dt class="col-sm-3">Another term</dt>
-        <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
+    <dt class="col-sm-3">Another term</dt>
+    <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
 
-        <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-        <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+    <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+    <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
 
-        <dt class="col-sm-3">Nesting</dt>
-        <dd class="col-sm-9">
-            <dl class="row">
-                <dt class="col-sm-4">Nested definition list</dt>
-                <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your
-                    definition list.</dd>
-            </dl>
-        </dd>
-    </dl>
+    <dt class="col-sm-3">Nesting</dt>
+    <dd class="col-sm-9">
+        <dl class="row">
+            <dt class="col-sm-4">Nested definition list</dt>
+            <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your
+                definition list.</dd>
+        </dl>
+    </dd>
+</dl>
 
 {% endblock %}

@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="ttt_style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <!-- navbar starts........... -->
+
+    <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark">
+        <div class="container" style="max-width: 960px;">
+            <!-- Brand Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="../static/logos/leaf3.png" alt="Your Brand" width="24" height="24"
+                    class="d-inline-block align-text-top">
+            </a>
+
+            <!-- Toggler Button for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                aria-controls="offcanvas" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Offcanvas Menu -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasLabel">Virtual Garden</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav flex-grow-1 justify-content-between">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Tour</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Enterprise</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Sign in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- End of Navbar................. -->
+
+
+    <main>
+
+        <!-- welcome Topic page........ -->
+
+
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+            <div class="p-lg-5 mx-auto my-5">
+                <h1 class="display-3 fw-bold">Virtual garden for Ayurvedic Plants</h1>
+                <h3 class="fw-normal fst-italic text-muted mb-3">"Bringing ancient wisdom to your modern world."</h3>
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        </div>
+
+        <!-- CAROUSUAL PHOTOS......................... -->
+
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="Slide 1"
+                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                    class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+                    class=""></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"
+                    class=""></button>
+
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="../static/plants_img/classification.png" class="d-block h-100" alt="...">
+                    <div class="container">
+                        <div class="carousel-caption bg-dark bg-opacity-75 p-2">
+                            <h1>Explore Botanical Classifications</h1>
+                            <p class="opacity-75">Understand the roots of Ayurvedic plants — from Kingdom to Species.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="../static/plants_img/medicine4.png" class="d-block h-100" alt="...">
+                    <div class="container">
+                        <div class="carousel-caption bg-dark bg-opacity-75 p-2 rounded">
+                            <h1>From Soil to Solution.</h1>
+                            <p>The journey of every remedy — from wild leaves to crafted cures for
+                                mind and body.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="../static/plants_img/branch.png" class="d-block h-100" alt="...">
+
+                    <div class="container">
+                        <div class="carousel-caption text-end text-white">
+                            <h1>The Evergreen Healer.</h1>
+                            <p>A symbol of resilience, ferns remind us of nature’s timeless beauty and adaptability.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="../static/plants_img/cannabis.webp" class="d-block h-100" alt="...">
+
+                    <div class="container">
+                        <div class="carousel-caption text-end text-white">
+                            <h1>Ancient Leaves, Modern Healing</h1>
+                            <p>Discover the therapeutic power of plants that have shaped centuries of natural medicine.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-success carousel-control-prev" type="button" data-bs-target="#myCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="btn btn-success carousel-control-next" type="button" data-bs-target="#myCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Marketing messaging and featurettes
+  ================================================== -->
+
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+
+        <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                        preserveAspectRatio="xMidYMid slice">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                    </svg>
+                    <h2 class="fw-normal">Heading</h2>
+                    <p>Some representative placeholder content for the three columns of text below the carousel. This is
+                        the first column.</p>
+                    <p><a class="btn btn-secondary" href="#">View details »</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                        preserveAspectRatio="xMidYMid slice">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                    </svg>
+                    <h2 class="fw-normal">Heading</h2>
+                    <p>Another exciting bit of representative placeholder content. This time, we've moved on to the
+                        second column.</p>
+                    <p><a class="btn btn-secondary" href="#">View details »</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                        preserveAspectRatio="xMidYMid slice">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                    </svg>
+                    <h2 class="fw-normal">Heading</h2>
+                    <p>And lastly this, the third column of representative placeholder content.</p>
+                    <p><a class="btn btn-secondary" href="#">View details »</a></p>
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+
+
+            <!-- START THE FEATURETTES -->
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span
+                            class="text-body-secondary">It’ll blow your mind.</span></h2>
+                    <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
+                        prose here.</p>
+                </div>
+                <div class="col-md-5">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
+                            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                    </svg>
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span
+                            class="text-body-secondary">See for yourself.</span></h2>
+                    <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of
+                        how this layout would work with some actual real-world content in place.</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
+                            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                    </svg>
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span
+                            class="text-body-secondary">Checkmate.</span></h2>
+                    <p class="lead">And yes, this is the last block of representative placeholder content. Again, not
+                        really intended to be actually read, simply here to give you a better view of what this would
+                        look like with some actual content. Your content.</p>
+                </div>
+                <div class="col-md-5">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
+                            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                    </svg>
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <!-- /END THE FEATURETTES -->
+
+        </div>
+
+
+        <!-- FEATURED GRID...................... -->
+
+
+
+
+        <div class="container px-4 py-5" id="icon-grid">
+            <h2 class="pb-2 border-bottom">Icon grid</h2>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                        aria-hidden="true">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                    <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                        aria-hidden="true">
+                        <use xlink:href="#cpu-fill"></use>
+                    </svg>
+                    <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                        aria-hidden="true">
+                        <use xlink:href="#calendar3"></use>
+                    </svg>
+                    <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                        aria-hidden="true">
+                        <use xlink:href="#home"></use>
+                    </svg>
+                    <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                        aria-hidden="true">
+                        <use xlink:href="#speedometer2"></use>
+                    </svg>
+                    <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                        aria-hidden="true">
+                        <use xlink:href="#toggles2"></use>
+                    </svg>
+                    <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                        aria-hidden="true">
+                        <use xlink:href="#geo-fill"></use>
+                    </svg>
+                    <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"
+                        aria-hidden="true">
+                        <use xlink:href="#tools"></use>
+                    </svg>
+                    <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- divider -->
+        <div class="b-example-divider"></div>
+
+        <!-- MORE FEATURES..................... -->
+
+        <div class="container px-4 py-5">
+            <h2 class="pb-2 border-bottom">Features with title</h2>
+
+            <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+                <div class="col d-flex flex-column align-items-start gap-2">
+                    <h2 class="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2>
+                    <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We'll
+                        add
+                        onto it with another sentence and probably just keep going until we run out of words.</p>
+                    <a href="#" class="btn btn-primary btn-lg">Primary button</a>
+                </div>
+
+                <div class="col">
+                    <div class="row row-cols-1 row-cols-sm-2 g-4">
+                        <div class="col d-flex flex-column gap-2">
+                            <div
+                                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                                <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                                    <use xlink:href="#collection"></use>
+                                </svg>
+                            </div>
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
+                            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.
+                            </p>
+                        </div>
+
+                        <div class="col d-flex flex-column gap-2">
+                            <div
+                                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                                <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                                    <use xlink:href="#gear-fill"></use>
+                                </svg>
+                            </div>
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
+                            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.
+                            </p>
+                        </div>
+
+                        <div class="col d-flex flex-column gap-2">
+                            <div
+                                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                                <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                                    <use xlink:href="#speedometer"></use>
+                                </svg>
+                            </div>
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
+                            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.
+                            </p>
+                        </div>
+
+                        <div class="col d-flex flex-column gap-2">
+                            <div
+                                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                                <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                                    <use xlink:href="#table"></use>
+                                </svg>
+                            </div>
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
+                            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER ........................................................ -->
+
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
+                    viewBox="0 0 24 24">
+                    <title>Product</title>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path
+                        d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
+                    </path>
+                </svg>
+                <small class="d-block mb-3 text-body-secondary">© 2017–2025</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Features</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Business</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Education</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Government</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Gaming</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+
+    <script defer="" src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"></script>
+
+</body>
+
+</html>

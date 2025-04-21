@@ -37,6 +37,33 @@ def is_strong_password(password):
         return False
 
 
+@app.route('/welcome')
+def welcome_page():
+
+    return render_template('welcome_page.html')
+
+
+# new pages added new navbar......
+@app.route('/welcome2')
+def welcome2():
+
+    return render_template('welcome2.html')
+
+
+@app.route('/login2')
+def login2():
+
+    return render_template('login2.html')
+
+
+@app.route('/index2')
+def index2():
+
+    return render_template('index2.html')
+
+# End of new navbar pages........
+
+
 @app.route('/')
 def index():
     if 'username' in session:   # check inside session dictionary, if there's 'username' data store
@@ -126,4 +153,6 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True)   # for self hosted self machine only. loop back for others...
+    # for hosting on local network, 0000 means all can access, and can listen.. if same network shared devices
+    app.run(host='0.0.0.0', port=5000, debug=True)
