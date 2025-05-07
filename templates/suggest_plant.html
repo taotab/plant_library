@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+{% set no_background = True %}
+
+{% block content %}
+<!-- INfo: give 'for' and 'id' attributes same name for better usage with js and such. -->
+<!-- 'name' needed for flask request.form(something) to handle forms submission data to backend -->
+
+<div class="container mt-3">
+    <h2 class="mb-4">📬 Suggest a Plant to us</h2>
+
+    <!-- FLASH MESSAGES DISPLAY PART (NEW) -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {% for message in messages %}
+        <div>{{ message }}</div>
+        {% endfor %}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('suggestion') }}" method="post" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label for="plantName" class="form-label">🌿 Plant Name</label>
+            <input type="text" class="form-control" id="plantName" name="plant_name" placeholder="Enter plant name"
+                maxlength="80" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="plantDescription" class="form-label">📝 Description</label>
+            <textarea class="form-control" id="plantDescription" name="description" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="plantLocation" class="form-label">📍 Location (Optional)</label>
+            <input type="text" class="form-control" id="plantLocation" name="location"
+                placeholder="City or Area (optional)" maxlength="200">
+        </div>
+
+        <div class="mb-3">
+            <label for="plantType" class="form-label">🌱 Type of Plant</label>
+            <select class="form-select mb-3" id="plantType" name="plant_type" required>
+                <option value="" selected disabled>Choose one</option>
+                <option value="Herb">Herb</option>
+                <option value="Shrub">Shrub</option>
+                <option value="Tree">Tree</option>
+                <option value="Climber">Climber</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="uploaderName" class="form-label">👤 Your Name (Optional)</label>
+            <input type="text" class="form-control" id="uploaderName" name="uploader_name"
+                placeholder="Leave blank to stay anonymous" maxlength="80">
+        </div>
+
+        <div class="mb-3">
+            <label for="formFile" class="form-label">📷 Upload Image</label>
+            <input class="form-control" type="file" id="formFile" name="file" required>
+        </div>
+
+        <button type="submit" class="btn btn-success position-relative top-0 start-50 translate-middle-x">📨 Submit
+            Suggestion</button>
+
+
+    </form>
+
+
+
+
+</div>
+
+{% endblock %}
+
+
+
+
+<!-- <button type="submit" class="btn btn-success position-relative top-0 start-50 translate-middle-x">📨 Submit
+    Suggestion</button> -->
+
+<!-- <button type="submit" class="btn btn-success w-50">📨 Submit Suggestion</button> -->

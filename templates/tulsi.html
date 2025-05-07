@@ -3,95 +3,99 @@
 
 {% block content %}
 
-<h1>Classification:</h1>
-<table class="table table-striped w-auto p-3">
+<div class="container">
 
-    <tbody>
-        <tr>
-            <th scope="row">Kingdom</th>
-            <td>Plantae</td>
-        </tr>
-        <tr>
-            <th scope="row">Phylum</th>
-            <td>Spermatophyte</td>
-        </tr>
-        <tr>
-            <th scope="row">Class</th>
-            <td colspan="2">Magnoliopsida</td>
-        </tr>
+    <h1>Classification:</h1>
+    <table class="table table-striped w-auto p-3">
 
-        <th scope="row">Subclass</th>
-        <td colspan="2">Larry the Bird</td>
-        </tr>
+        <tbody>
+            <tr>
+                <th scope="row">Kingdom</th>
+                <td>Plantae</td>
+            </tr>
+            <tr>
+                <th scope="row">Phylum</th>
+                <td>Spermatophyte</td>
+            </tr>
+            <tr>
+                <th scope="row">Class</th>
+                <td colspan="2">Magnoliopsida</td>
+            </tr>
 
-        <th scope="row">Order</th>
-        <td colspan="2">Lamiales</td>
-        </tr>
+            <th scope="row">Subclass</th>
+            <td colspan="2">Larry the Bird</td>
+            </tr>
 
-        <th scope="row">Family</th>
-        <td colspan="2">Lamiaceae </td>
-        </tr>
+            <th scope="row">Order</th>
+            <td colspan="2">Lamiales</td>
+            </tr>
 
-        <th scope="row">Genus</th>
-        <td colspan="2">Ocinum</td>
-        </tr>
+            <th scope="row">Family</th>
+            <td colspan="2">Lamiaceae </td>
+            </tr>
 
-        <th scope="row">Species</th>
-        <td colspan="2">Tenuiflorum</td>
-        </tr>
-    </tbody>
-</table>
+            <th scope="row">Genus</th>
+            <td colspan="2">Ocinum</td>
+            </tr>
+
+            <th scope="row">Species</th>
+            <td colspan="2">Tenuiflorum</td>
+            </tr>
+        </tbody>
+    </table>
 
 
 
 
-<img src="{{ url_for('static', filename='plants_img/tulsi.jpg') }}" class="img-fluid" alt="...">
-<br>
-<br>
+    <img src="{{ url_for('static', filename='plants_img/tulsi.jpg') }}" class="img-fluid" alt="...">
+    <br>
+    <br>
 
-<dl class="row">
-    <dt class="col-sm-3">Description</dt>
-    <dd class="col-sm-9">
-        <p>There are four types of tulsi mentioned in ayurvedic texts ie Rama, Krishna, Vana & Kapoor
-            Tulsi.</p>
+    <dl class="row">
+        <dt class="col-sm-3">Description</dt>
+        <dd class="col-sm-9">
+            <p>There are four types of tulsi mentioned in ayurvedic texts ie Rama, Krishna, Vana & Kapoor
+                Tulsi.</p>
 
-        <p>For over the centuries Tulsi (the queen of herbs) has been known for its remarkable healing properties.
-        </p>
-    </dd>
+            <p>For over the centuries Tulsi (the queen of herbs) has been known for its remarkable healing properties.
+            </p>
+        </dd>
 
-    <dt class="col-sm-3">Benefits</dt>
-    <dd class="col-sm-9">
-        <ul>
-            <li>Tulsi is taken as herbal tea.</li>
-            <li>The oil extracted from the Karpoora Tulsi is mostly used in the herbal toiletry.</li>
-            <li>Its oil is also used against insects and bacteria.</li>
-            <li>The Rama Tulsi is an effective remedy for Severe acute Respiratory Syndrome.</li>
-            <li>Juice of its leaves gives relief in cold, fever, bronchitis and cough.</li>
-            <li>Tulsi oil is also used as an ear drop.</li>
-            <li>Tulsi helps in curing malaria.</li>
-            <li>It is very effective against indigestion, headache, hysteria, insomnia, and cholera.</li>
-            <li>The fresh leaves of Tulsi are taken by millions of people every day.</li>
-            <li>Many people wear Tulsi beads, which is said to have certain physical and medicinal properties.</li>
-            <li>The entire herb is used to treat common aches like toothache, earache, shoulder pain and neuralgia.
-            </li>
-        </ul>
+        <dt class="col-sm-3">Benefits</dt>
+        <dd class="col-sm-9">
+            <ul>
+                <li>Tulsi is taken as herbal tea.</li>
+                <li>The oil extracted from the Karpoora Tulsi is mostly used in the herbal toiletry.</li>
+                <li>Its oil is also used against insects and bacteria.</li>
+                <li>The Rama Tulsi is an effective remedy for Severe acute Respiratory Syndrome.</li>
+                <li>Juice of its leaves gives relief in cold, fever, bronchitis and cough.</li>
+                <li>Tulsi oil is also used as an ear drop.</li>
+                <li>Tulsi helps in curing malaria.</li>
+                <li>It is very effective against indigestion, headache, hysteria, insomnia, and cholera.</li>
+                <li>The fresh leaves of Tulsi are taken by millions of people every day.</li>
+                <li>Many people wear Tulsi beads, which is said to have certain physical and medicinal properties.</li>
+                <li>The entire herb is used to treat common aches like toothache, earache, shoulder pain and neuralgia.
+                </li>
+            </ul>
 
-    </dd>
+        </dd>
 
-    <dt class="col-sm-3">Another term</dt>
-    <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
+        <dt class="col-sm-3">Another term</dt>
+        <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
 
-    <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-    <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+        <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+        <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
 
-    <dt class="col-sm-3">Nesting</dt>
-    <dd class="col-sm-9">
-        <dl class="row">
-            <dt class="col-sm-4">Nested definition list</dt>
-            <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your
-                definition list.</dd>
-        </dl>
-    </dd>
-</dl>
+        <dt class="col-sm-3">Nesting</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+                <dt class="col-sm-4">Nested definition list</dt>
+                <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your
+                    definition list.</dd>
+            </dl>
+        </dd>
+    </dl>
+
+</div>
 
 {% endblock %}

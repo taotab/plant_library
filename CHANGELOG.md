@@ -18,6 +18,21 @@ Dates are in `YYYY-MM-DD` format.
 
 ---
 
+## 🛠 Later Future Enhancements
+
+Upload plant name + description along with image (not just the file).
+
+Store info in a database (SQLite).
+
+Create a real "Plant page" dynamically.
+
+Improve image resizing (make smaller thumbnails).
+
+Add tags, search, filter (e.g., "Show only Medicinal Plants").
+
+---
+
+
 ## [0.1.3] - 2025-04-17
 
 ### Added

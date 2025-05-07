@@ -11,3 +11,5 @@ with open(schema_path) as f:
     conn.executescript(f.read())
     conn.commit()
     conn.close()
+
+print("Initialized the database. Existing tables are preserved.")

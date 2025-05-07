@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% set no_background = True %}
+
+{% block content %}
+
+
+<div class="container">
+
+    <h1>Pending Uploads</h1>
+
+    {% for s in suggestions %}
+    <div class="card my-3 p-3 border">
+        <h3>{{ s['plant_name'] }}</h3>
+        <p><strong>Description:</strong> {{ s['description'] }}</p>
+        <p><strong>Type:</strong> {{ s['plant_type'] }}</p>
+        <p><strong>Location:</strong> {{ s['location'] }}</p>
+        <p><strong>Uploaded by:</strong> {{ s['uploader_name'] }}</p>
+        <img src="{{ url_for('static', filename='uploads/' + s['image_filename']) }}" alt="Plant Image"
+            style="max-width: 300px;">
+    </div>
+    {% endfor %}
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+</div>
+
+{% endblock %}

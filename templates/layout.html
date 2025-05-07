@@ -5,51 +5,129 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ttt_style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
 </head>
 
+
 <body class="masthead" {% if not no_background %}
-    style="background-image: url('{{ url_for('static', filename='img/cover_img.jpeg') }}');" {% endif %}>
+    style="background-image: url('{{ url_for('static', filename='plants_img/cover_back.png') }}');" {% endif %}>
 
-    <div class="sticky-top">
-        <header class="container d-flex flex-wrap justify-content-center py-3 mb-4" data-bs-theme="dark">
-            <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
-                <img src="{{ url_for('static', filename='logos/leaf3.png') }}" alt="Logo" width="50" height="42"
-                    class="me-2">
-                <span class="fs-4">Virtual garden for Ayurvedic Plants</span>
+    <!-- navbar starts........... -->
+
+    <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark">
+        <div class="container" style="max-width: 960px;">
+            <!-- Brand Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static', filename='logos/leaf3.png') }}" alt="Your Brand" width="24" height="24"
+                    class="d-inline-block align-text-top">
+            </a>
+
+            <!-- Toggler Button for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                aria-controls="offcanvas" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Offcanvas Menu -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasLabel">Virtual Garden</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav flex-grow-1 justify-content-between">
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('welcome_page') }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Tour</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('upload') }}">Upload</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index2') }}">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('suggestion') }}">📬 Suggest a
+                                Plant</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Sign in</a></li>
+                    </ul>
+                </div>
             </div>
-            <ul class="nav nav-pills fw-bold">
-                <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link active"
-                        aria-current="page">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-                <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link"
-                        onclick="return confirm('Are you sure you want to log out?');">Logout</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-            </ul>
-        </header>
-    </div>
+        </div>
+    </nav>
 
-    <div class="container">
-        {% block content %}
-        <!-- Page-specific content goes here -->
-        {% endblock %}
-    </div>
+    <!-- End of Navbar................. -->
 
-    <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column justify-content-center align-items-center">
-        <footer class="text-center text-white-50">
-            <p class="mb-1">Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by
-                <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.
-            </p>
-            <p class="float-end mb-1"><a href="#">Back to top</a></p>
-        </footer>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    {% block content %}
+
+    <!-- Page-specific content goes here -->
+
+    {% endblock %}
+
+
+
+    <!-- FOOTER ........................................................ -->
+
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
+                    viewBox="0 0 24 24">
+                    <title>Product</title>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path
+                        d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
+                    </path>
+                </svg>
+                <small class="d-block mb-3 text-body-secondary">© 2017–2025</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Features</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Business</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Education</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Government</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Gaming</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
+
 
 </body>
 

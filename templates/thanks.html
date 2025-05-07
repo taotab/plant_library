@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% set no_background = True %}
+
+{% block content %}
+
+<div class="container text-center mt-5">
+    <h1 class="display-4 text-success">🌱 Thank You!</h1>
+    <p class="lead mt-3">Your plant suggestion has been received successfully.</p>
+    <p>We're grateful for your contribution to helping us grow our plant database!</p>
+
+    <div class="mt-4">
+        <a href="{{ url_for('welcome_page') }}" class="btn btn-outline-primary me-2">🏡 Back to Home</a>
+        <a href="{{ url_for('suggestion') }}" class="btn btn-outline-success">➕ Suggest Another Plant</a>
+    </div>
+</div>
+
+
+{% endblock %}
