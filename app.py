@@ -135,8 +135,9 @@ def dashboard():
 
     # admin logic
     conn = get_db_connection()
-    suggestions = conn.execute('SELECT * FROM suggestions').fetchall()
-    plants = conn.execute('SELECT * FROM plants').fetchall()
+    suggestions = conn.execute(
+        'SELECT * FROM suggestions ORDER BY id DESC').fetchall()
+    plants = conn.execute('SELECT * FROM plants ORDER BY id DESC').fetchall()
     conn.close()
     # Read view from query param
     view = request.args.get('view', 'pending')
