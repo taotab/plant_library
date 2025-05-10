@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% set no_background = True %}
+
+{% block content %}
+<div class="container py-4">
+
+    <h1 class="mb-4">{{ plant['plant_name']|capitalize }}</h1>
+
+    <!-- <img src="{{ url_for('static', filename='uploads/' ~ plant['image_filename']) }}" class="img-fluid mb-4"
+        alt="{{ plant['plant_name'] }}"> -->
+
+    <!-- <img src="{{ url_for('static', filename='uploads/' ~ plant['image_filename']) }}"
+        class="img-fluid mb-4 mx-auto d-block" style="max-width: 600px;" alt="{{ plant['plant_name'] }}">
+ -->
+
+    <img src="{{ url_for('static', filename='uploads/' ~ plant['image_filename']) }}"
+        class="img-fluid mb-4 mx-auto d-block" style="max-width: 600px; width: 100%; height: auto;"
+        alt="{{ plant['plant_name'] }}">
+
+
+    <!-- nwe styling.... -->
+    <div class="container py-4 px-3 px-md-4">
+
+        <dl class="row">
+            <!-- <dt class="col-sm-3">Description:</dt>
+        <dd class="col-sm-9">{{ plant['description'] or 'No description available.' }}</dd> -->
+
+            <dt class="col-sm-3">Description:</dt>
+            <dd class="col-sm-9">
+                {% if plant['description'] %}
+                {% for paragraph in plant['description'].strip().split('\n\n') %}
+                <p>{{ paragraph | replace('\n', ' ') }}</p>
+                {% endfor %}
+                {% else %}
+                <p>No description available.</p>
+                {% endif %}
+            </dd>
+
+
+            <!-- <dt class="col-sm-3">Benefits:</dt>
+        <dd class="col-sm-9">
+            <ul>
+                {% for item in (plant['benefits'] or '').splitlines() if item.strip() %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </dd> -->
+            {% if plant['benefits'] and plant['benefits'].strip() %}
+            <dt class="col-sm-3">Benefits:</dt>
+            <dd class="col-sm-9">
+                <ul>
+                    {% for line in plant['benefits'].split('\n') %}
+                    {% if line.strip() %}
+                    <li>{{ line.strip() }}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </dd>
+            {% endif %}
+
+            <dt class="col-sm-3">Location</dt>
+            <dd class="col-sm-9">{{ plant['location'] or 'Unknown' }}</dd>
+
+            <dt class="col-sm-3 text-truncate">Type:</dt>
+            <dd class="col-sm-9">{{ plant['plant_type'] }}</dd>
+
+            <dt class="col-sm-3">Suggested by:</dt>
+            <dd class="col-sm-9">
+                <dl class="row">
+                    <dt class="col-sm-4">{{ plant['uploader_name'] or 'Anonymous' }}</dt>
+                    <dd class="col-sm-8 fst-italic">Approved at: {{ plant['approved_at'] }}</dd>
+                </dl>
+            </dd>
+
+        </dl>
+    </div>
+
+</div>
+{% endblock %}

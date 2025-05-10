@@ -3,53 +3,242 @@
 
 {% block content %}
 
-
 <div class="container">
 
-    <h1>Pending Uploads</h1>
-
-    {% for s in suggestions %}
-    <div class="card my-3 p-3 border">
-        <h3>{{ s['plant_name'] }}</h3>
-        <p><strong>Description:</strong> {{ s['description'] }}</p>
-        <p><strong>Type:</strong> {{ s['plant_type'] }}</p>
-        <p><strong>Location:</strong> {{ s['location'] }}</p>
-        <p><strong>Uploaded by:</strong> {{ s['uploader_name'] }}</p>
-        <img src="{{ url_for('static', filename='uploads/' + s['image_filename']) }}" alt="Plant Image"
-            style="max-width: 300px;">
+    <!-- flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="mt-3">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle-fill"></i>
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
+    {% endif %}
+    {% endwith %}
 
-    <table class="table">
-        <thead class="thead-light">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="btn-group mb-4 d-flex justify-content-center" role="group" aria-label="Dashboard view toggle">
+        <input type="radio" class="btn-check" name="dashboardView" id="pendingToggle" autocomplete="off" checked>
+        <label class="btn btn-outline-primary btn-lg" for="pendingToggle" onclick="showSection('pending')">Pending
+            Uploads</label>
+
+        <input type="radio" class="btn-check" name="dashboardView" id="approvedToggle" autocomplete="off">
+        <label class="btn btn-outline-success btn-lg" for="approvedToggle" onclick="showSection('approved')">Approved
+            Plants</label>
+    </div>
+
+
+    <div id="pending-section">
+        <h1 class="mb-4">Pending Uploads</h1>
+
+        <table class="table table-bordered align-middle text-center table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Submitted on</th>
+                    <th>Plant Name</th>
+                    <th>Type</th>
+                    <th>Location</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for s in suggestions %}
+                <tr>
+                    <td>{{ s['timestamp'] | datetime_format }}</td>
+                    <td>{{ s['plant_name'] }}</td>
+                    <td>{{ s['plant_type'] }}</td>
+                    <td>{{ s['location'] }}</td>
+                    <td>
+                        <img src="{{ url_for('static', filename='uploads/' + s['image_filename']) }}" alt="Plant Image"
+                            style="max-width: 100px; max-height: 100px;">
+                        <button class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#viewModal{{ s['id'] }}">🔍View</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% for s in suggestions %}
+        <div class="modal fade" id="viewModal{{ s['id'] }}" data-bs-backdrop="static" data-bs-keyboard="false"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content p-3">
+                    <!-- Main edit form -->
+                    <form method="POST" action="{{ url_for('edit_suggestion', id=s['id']) }}"
+                        enctype="multipart/form-data">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Details for {{ s['plant_name'] }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body text-start">
+                            <p><strong>Plant Name:</strong>
+                                <span class="readonly">{{ s['plant_name'] }}</span>
+                                <input name="plant_name" type="text" class="form-control edit-field d-none"
+                                    value="{{ s['plant_name'] }}" required>
+                            </p>
+
+                            <p><strong>Description:</strong>
+                                <span class="readonly"><small>can see in edit mode</small></span>
+                                <textarea name="description" class="form-control edit-field d-none"
+                                    rows="4">{{ s['description'] }}</textarea>
+                            </p>
+
+                            <p><strong>Type:</strong>
+                                <span class="readonly">{{ s['plant_type'] }}</span>
+                                <select class="form-select mb-3 form-control edit-field d-none" name="plant_type"
+                                    required>
+                                    <option value="" disabled>Choose one</option>
+                                    <option value="Herb" {% if s['plant_type']=='Herb' %}selected{% endif %}>Herb
+                                    </option>
+                                    <option value="Shrub" {% if s['plant_type']=='Shrub' %}selected{% endif %}>Shrub
+                                    </option>
+                                    <option value="Tree" {% if s['plant_type']=='Tree' %}selected{% endif %}>Tree
+                                    </option>
+                                    <option value="Climber" {% if s['plant_type']=='Climber' %}selected{% endif %}>
+                                        Climber
+                                    </option>
+                                    <option value="Other" {% if s['plant_type']=='Other' %}selected{% endif %}>Other
+                                    </option>
+                                </select>
+                            </p>
+
+                            <p><strong>Location:</strong>
+                                <span class="readonly">{{ s['location'] }}</span>
+                                <input name="location" type="text" class="form-control edit-field d-none"
+                                    value="{{ s['location'] }}" required>
+                            </p>
+
+                            <!-- Edit mode only: Benefits textarea + tip -->
+                            <div class="edit-field d-none">
+                                <p><strong>Benefits:</strong></p>
+                                <small class="form-text text-muted">Enter one benefit per line. Bullet points will
+                                    be
+                                    shown
+                                    automatically.</small>
+                                <!-- <textarea name="benefits" class="form-control" rows="6"
+                                    placeholder="Enter one benefit per line">{{ s['benefits'] }}</textarea> -->
+                                <textarea name="benefits" class="form-control"
+                                    rows="6">{{ s['benefits'] or '' }}</textarea>
+
+                            </div>
+
+
+
+                            <p><strong>Uploaded by:</strong> {{ s['uploader_name'] }}</p>
+                            <p><strong>Submitted on:</strong> {{ s['timestamp'] | datetime_format }}</p>
+
+                            <p><strong>Current Image:</strong></p>
+                            <div class="text-center mt-3">
+                                <img src="{{ url_for('static', filename='uploads/' + s['image_filename']) }}"
+                                    class="img-fluid">
+                            </div>
+
+                            <div class="edit-field d-none mt-3">
+                                <label for="image_{{ s['id'] }}" class="form-label">Replace Image (optional)</label>
+                                <input class="form-control" type="file" name="image" id="image_{{ s['id'] }}"
+                                    accept="image/*">
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <!-- View Mode Actions -->
+                            <div class="view-actions">
+                                <button type="button" class="btn btn-outline-danger"
+                                    onclick="submitDeleteForm({{ s['id'] }})">❌Delete</button>
+
+                                <button type="button" class="btn btn-outline-success"
+                                    onclick="submitApproveForm({{ s['id'] }})">✅Approve</button>
+
+                                <button type="button" class="btn btn-outline-primary"
+                                    onclick="toggleEdit(this)">🖊️Edit</button>
+                            </div>
+
+                            <!-- Edit Mode Actions -->
+                            <div class="edit-actions d-none">
+                                <button type="submit" class="btn btn-success">💾 Save Changes</button>
+                                <button type="button" class="btn btn-secondary"
+                                    onclick="toggleEdit(this)">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Hidden delete form (OUTSIDE the main form) -->
+                    <form id="deleteForm{{ s['id'] }}" method="POST"
+                        action="{{ url_for('delete_suggestion', id=s['id']) }}"></form>
+                    <form id="approveForm{{ s['id'] }}" method="POST"
+                        action="{{ url_for('approve_suggestion', id=s['id']) }}">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id="approved-section" class="d-none">
+        <h1 class="mb-4">Approved Plants</h1>
+        <table class="table table-bordered align-middle text-center table-hover">
+            <thead>
+                <tr>
+                    <th>Plant Name</th>
+                    <th>Type</th>
+                    <th>Location</th>
+                    <th>Image</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for plant in plants %}
+                <tr>
+                    <td>{{ plant['plant_name'] }}</td>
+                    <td>{{ plant['plant_type'] }}</td>
+                    <td>{{ plant['location'] }}</td>
+                    <td>
+                        <img src="{{ url_for('static', filename='uploads/' + plant['image_filename']) }}"
+                            style="max-width: 100px;">
+                    </td>
+                    <td>
+                        <form method="POST" action="{{ url_for('delete_plant', id=plant['id']) }}"
+                            onsubmit="return confirm('Are you sure you want to delete this plant?');">
+                            <button type="submit" class="btn btn-outline-danger">❌ Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        function showSection(section) {
+            document.getElementById('pending-section').classList.add('d-none');
+            document.getElementById('approved-section').classList.add('d-none');
+            document.getElementById(section + '-section').classList.remove('d-none');
+        }
+
+        // Set initial view based on server-passed variable
+        window.onload = function () {
+            const currentView = "{{ current_view }}";
+            showSection(currentView);
+
+            // Set the radio button accordingly
+            if (currentView === "approved") {
+                document.getElementById("approvedToggle").checked = true;
+            } else {
+                document.getElementById("pendingToggle").checked = true;
+            }
+        };
+    </script>
+
+
+
+
 
 
 

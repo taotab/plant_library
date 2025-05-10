@@ -1,0 +1,132 @@
+{% extends 'layout.html' %}
+{% set no_background = True %}
+
+{% block content %}
+<main>
+
+
+
+    <div class="container marketing p-4">
+        <h2 class="border-bottom px-4 pb-2 mb-5">Contributors</h2>
+
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                    preserveAspectRatio="xMidYMid slice">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                </svg>
+                <h2 class="fw-normal">Janmoni</h2>
+                <p>B. Tech Final year (2025 batch)</p>
+                <p>Downtown College, Guwahati</p>
+                <p><a class="btn btn-secondary" href="#">Github account »</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                    preserveAspectRatio="xMidYMid slice">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                </svg>
+                <h2 class="fw-normal">Member2</h2>
+                <p>B. Tech Final year (2025 batch)</p>
+                <p>Downtown College, Guwahati</p>
+                <p><a class="btn btn-secondary" href="#">Github account »</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                    preserveAspectRatio="xMidYMid slice">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                </svg>
+                <h2 class="fw-normal">Member3</h2>
+                <p>B. Tech Final year (2025 batch)</p>
+                <p>Downtown College, Guwahati</p>
+                <p><a class="btn btn-secondary" href="#">Github account »</a></p>
+            </div>
+        </div>
+
+    </div>
+    <div class="b-example-divider"></div>
+
+
+    <!-- MORE FEATURES..................... -->
+
+    <div class="container px-4 py-5">
+        <h2 class="pb-2 border-bottom">Key Technologies and Tools Used</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+            <div class="col d-flex flex-column align-items-start gap-2">
+                <h2 class="fw-bold text-body-emphasis">Powerful Tech Stack for an Efficient Workflow</h2>
+                <p class="text-body-secondary">Various libraries used for better design and workability.</p>
+                <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">Explore Plants</a>
+            </div>
+
+            <div class="col">
+                <div class="row row-cols-1 row-cols-sm-2 g-4">
+                    <div class="col d-flex flex-column gap-2">
+                        <div
+                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                            <img src="{{ url_for('static', filename='logos/Flask.png') }}" alt="Flask">
+                        </div>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">Backend</h4>
+                        <p class="text-body-secondary">Flask is free and open-source. It enables quick development and
+                            deployment, making it ideal for rapid prototyping and scalable applications.
+                        </p>
+                    </div>
+
+                    <div class="col d-flex flex-column gap-2">
+                        <div
+                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                            <!-- <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                                <use xlink:href="#gear-fill"></use>
+                            </svg> -->
+                            <img src="{{ url_for('static', filename='logos/SQLite.png') }}" alt="Flask">
+                        </div>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">Database</h4>
+                        <p class="text-body-secondary">Bootstrap is a free CSS framework. It's beginner-friendly and
+                            makes it easy to implement essential components like navbars, buttons, modals, and more.
+                        </p>
+                    </div>
+
+                    <div class="col d-flex flex-column gap-2">
+                        <div
+                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                            <!-- <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                                <use xlink:href="#speedometer"></use>
+                            </svg> -->
+                            <i class="bi bi-bootstrap"></i>
+
+                        </div>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">CSS Framework</h4>
+                        <p class="text-body-secondary">Bootstrap is a free css framework. Its easy to implement and
+                            beginner-friendly. It gives quick implementation of essential website components like
+                            navbar, buttons, and many more.
+                        </p>
+                    </div>
+
+                    <div class="col d-flex flex-column gap-2">
+                        <div
+                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                            <i class="bi bi-person-gear"></i> <!-- Better match for admin features -->
+                        </div>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">Admin Utilities</h4>
+                        <p class="text-body-secondary">
+                            Includes a secure admin dashboard with password protection, detailed logging, and image
+                            compression via Pillow to ensure efficient storage and performance.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

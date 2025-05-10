@@ -5,7 +5,7 @@ your_project/
 ├── init_db.py              # One-time DB setup script (can be deleted later)
 │
 ├── db/
-│   └── helpers.py          # DB functions (insert_suggestion, get_db_connection, etc.)
+│   └── helpers.py          # DB functions (insert_suggestion, get_db_connection, etc.), image compression
 │
 ├── templates/
 │   ├── layout.html

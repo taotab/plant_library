@@ -1,11 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, abort
 from werkzeug.utils import secure_filename
 import time
+from datetime import datetime
 import logging
 import sqlite3
 import os
 import re
-from db.helpers import insert_suggestion, get_db_connection
+from db.helpers import insert_suggestion, get_db_connection, update_suggestion, delete_suggestion_by_id, get_suggestion_by_id, insert_plant_from_suggestion, compress_and_save_image
 print("👀 Current working dir:", os.getcwd())
 
 # when you allow more users later, or faster uploads, or multiple users at once), uuid is better for more uniqueness
@@ -26,7 +27,7 @@ logging.basicConfig(level=logging.DEBUG,  # Log everything DEBUG and above
 
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'webp'}
-app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024  # 2 MB
+app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 5 MB
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Set the secret key to some random bytes. Keep this really secret!
@@ -54,82 +55,66 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+# 2025-04-30 19:50:25 to 30 Apr 2025, 07:50 PM convert format
+# used in jinja2 template, to format datetime in dashboard.html
 
-@app.route('/welcome')
+
+@app.template_filter('datetime_format')
+def datetime_format(value, format='%d %b %Y, %I:%M %p'):
+    try:
+        dt = datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
+        return dt.strftime(format)
+    except Exception as e:
+        return value  # fallback
+
+
+@app.route('/')
 def welcome_page():
 
     return render_template('welcome_page.html')
 
 
-@app.route('/upload', methods=['GET', 'POST'])
-def upload():
-    if request.method == 'POST':
-        # check if the post request has the file part
-        if 'file' not in request.files:
-            app.logger.error("No file part in the request")
-            flash('No file part')
-            # reload the same page (instead of going elsewhere)
-            return redirect(request.url)
-        file = request.files['file']
-        # If the user does not select a file, the browser submits an
-        # empty file without a filename.
-        if file.filename == '':
-            flash('No selected file')
-            app.logger.warning("User did not select a file")
-            return redirect(request.url)
+@app.route('/about')
+def about():
 
-         # Proceed with uploading the file
-        app.logger.info(f"Uploading file: {file.filename}")
-        # Your upload logic...
+    # return render_template('about.html')
+    return render_template('about.html')
 
-        if file and allowed_file(file.filename):
-            # filename original name is saved "file.filename", and secure_filename
-            # makes sure the filename is secure, and not malicious, keeps only safe chars like _ or .
-            filename = secure_filename(file.filename)
-            # to avoid overwriting files with the same name, we can add a timestamp
-            unique_filename = f"{int(time.time())}_{filename}"
-            file.save(os.path.join(
-                app.config['UPLOAD_FOLDER'], unique_filename))
-            # Log the successful file upload
-            app.logger.info(f"File uploaded successfully: {unique_filename}")
-
-            flash('File uploaded successfully!')
-            return redirect(request.url)
-        else:
-            # If the file is not allowed, show an error
-            app.logger.warning(f"Invalid file type attempted: {file.filename}")
-            flash('Invalid file type!')
-            return redirect(request.url)
-
-    return render_template('upload.html')
-
-
-# redirect(url_for('upload'))
-
-
-@app.route('/')
-def index():
-    if 'username' in session:   # check inside session dictionary, if there's 'username' data store
-        logged_msg = f'You are logged in... {session["username"]}.'
-
-        return render_template('index.html', logged_msg=logged_msg)
-    else:
-        # redirect to login page if not logged in
-        return redirect(url_for('login'))
 
 # Route for all pages instead of hardcoding : dynamic routing...
 
 
 # Loop over all images in the static folder, and show them in the index.html page
-@app.route('/index2')
-def index2():
-    image_folder = os.path.join('static', 'plants_img')
+@app.route('/index')
+def index():
+    # image_folder = os.path.join('static', 'plants_img')
     # List all image filenames
-    images = os.listdir(image_folder)
-    images = [img for img in images if img.endswith(
-        ('png', 'jpg', 'jpeg', 'gif', 'webp'))]
+    # images = os.listdir(image_folder)
+    # images = [img for img in images if img.endswith(
+    #     ('png', 'jpg', 'jpeg', 'gif', 'webp'))]
 
-    return render_template('index2.html', images=images)
+    # return render_template('index2.html', images=images)
+
+    conn = get_db_connection()
+    plants = conn.execute('SELECT * FROM plants').fetchall()
+    conn.close()
+    return render_template('index.html', plants=plants)
+
+
+# route for dynamic plant detail pages (experimental).......................
+
+@app.route('/plant/<int:plant_id>')
+def plant_detail(plant_id):
+    conn = get_db_connection()
+    plant = conn.execute(
+        'SELECT * FROM plants WHERE id = ?', (plant_id,)).fetchone()
+    conn.close()
+    if plant is None:
+        abort(404)
+    return render_template('plant_detail.html', plant=plant)
+
+
+#  end of dynamic plant detail pages (experimental).......................
 
 
 @app.route('/plants/<plant_name>')
@@ -145,10 +130,164 @@ def plant_page(plant_name):
 @app.route('/dashboard')
 def dashboard():
 
+    if not 'username' in session:
+        return redirect(url_for('login'))
+
+    # admin logic
     conn = get_db_connection()
     suggestions = conn.execute('SELECT * FROM suggestions').fetchall()
+    plants = conn.execute('SELECT * FROM plants').fetchall()
     conn.close()
-    return render_template('dashboard.html', suggestions=suggestions)
+    # Read view from query param
+    view = request.args.get('view', 'pending')
+    return render_template('dashboard.html', suggestions=suggestions, plants=plants, current_view=view)
+
+
+# suggestion updates codes:...........................
+
+
+@app.route('/delete_suggestion/<int:id>', methods=['POST'])
+def delete_suggestion(id):
+    suggestion = get_suggestion_by_id(id)
+    if suggestion is None:
+        flash("Suggestion not found.", "danger")
+        return redirect(url_for('dashboard'))
+
+    image_filename = suggestion['image_filename']
+    plant_name = suggestion['plant_name']
+
+    try:
+        # Delete image file if it exists
+        if image_filename:
+            image_path = os.path.join(
+                app.config['UPLOAD_FOLDER'], image_filename)
+            if os.path.exists(image_path):
+                os.remove(image_path)
+                app.logger.info(f"Deleted image file: {image_filename}")
+
+        # Delete DB entry
+        delete_suggestion_by_id(id)
+        app.logger.info(
+            f"Suggestion ID: '{id}', '{plant_name}' deleted successfully.")
+        flash(f"Deleted suggestion for '{plant_name}'.", "success")
+
+    except Exception as e:
+        app.logger.error(f"Error deleting suggestion ID {id}: {e}")
+        flash("Failed to delete the suggestion.", "danger")
+
+    return redirect(url_for('dashboard'))
+
+
+@app.route('/edit_suggestion/<int:id>', methods=['POST'])
+def edit_suggestion(id):
+    plant_name = request.form['plant_name'].strip()
+    description = request.form['description'].strip()
+    plant_type = request.form['plant_type'].strip()
+    location = request.form['location'].strip()
+    # benefits = request.form['benefits'].strip()
+    benefits = request.form.get('benefits', '').strip()
+    if not benefits:
+        benefits = ''
+
+    image_file = request.files.get('image')
+
+    new_filename = None  # Default: no image change
+
+    # Validate input lengths
+
+    if len(plant_name) > 100 or len(location) > 200:
+        app.logger.warning("Characters exceed the allowed length")
+        flash("One or more fields exceed the allowed length.")
+        return redirect(url_for('dashboard'))
+
+    if image_file and image_file.filename:
+        if allowed_file(image_file.filename):
+            try:
+                # Prepare new filename
+                original_name = secure_filename(image_file.filename)
+                timestamp = int(time.time())
+                new_filename = f"{timestamp}_{original_name}"
+
+                # Save the new image
+                upload_path = os.path.join(
+                    app.config['UPLOAD_FOLDER'], new_filename)
+                image_file.save(upload_path)
+                app.logger.info(
+                    f"New image saved in directory: {new_filename}")
+
+                # Optional: delete old image if needed
+                # Fetch current filename from DB to delete the old file
+                conn = get_db_connection()
+                old = conn.execute(
+                    'SELECT image_filename FROM suggestions WHERE id = ?', (id,)).fetchone()
+                conn.close()
+
+                if old and old['image_filename']:
+                    old_path = os.path.join(
+                        app.config['UPLOAD_FOLDER'], old['image_filename'])
+                    if os.path.exists(old_path):
+                        os.remove(old_path)
+
+                        app.logger.info(
+                            f"Old image deleted: {old['image_filename']}")
+
+                flash("Image updated.", "info")
+
+            except Exception as e:
+                app.logger.exception("Failed to save new image")
+                flash("Image upload failed. Please try again.", "error")
+                return redirect(url_for('dashboard'))
+        else:
+            app.logger.warning(
+                f"Invalid file type attempted: {image_file.filename}")
+            flash("Invalid file type for image.", "error")
+            return redirect(url_for('dashboard'))
+
+    try:
+        # Call your helper update function
+        update_suggestion(id, plant_name, description,
+                          plant_type, location, new_filename, benefits)
+
+        app.logger.info(f"Suggestion updated successfully: {plant_name}")
+        flash('Suggestion updated successfully.', 'success')
+        return redirect(url_for('dashboard'))
+    except Exception as e:
+        app.logger.exception("Error updating suggestion")
+        flash(f"Error updating suggestion: {e}", 'error')
+        return redirect(url_for('dashboard'))
+
+
+@app.route('/approve_suggestion/<int:id>', methods=['POST'])
+def approve_suggestion(id):
+    conn = get_db_connection()
+    try:
+        suggestion = conn.execute(
+            'SELECT * FROM suggestions WHERE id = ?', (id,)).fetchone()
+
+        if not suggestion:
+            flash("Suggestion not found.", "warning")
+            return redirect(url_for('dashboard'))
+
+        # Insert into plants using helper
+        insert_plant_from_suggestion(suggestion)
+
+        # Delete from suggestions
+        conn.execute('DELETE FROM suggestions WHERE id = ?', (id,))
+        conn.commit()
+
+        flash(
+            f"'{suggestion['plant_name']}' approved and added to public database!", "success")
+    except Exception as e:
+        app.logger.error(f"Error approving suggestion ID {id}: {e}")
+        flash("Failed to approve suggestion.", "danger")
+    finally:
+        conn.close()
+
+    return redirect(url_for('dashboard'))
+
+
+# end of suggestion updates codes:.......................
+
 
 #  Route for viewers suggestion plant box
 
@@ -199,16 +338,29 @@ def suggestion():
             # to avoid overwriting files with the same name, we can add a timestamp
             unique_filename = f"{int(time.time())}_{filename}"
 
+            # try:
+            #     file.save(os.path.join(
+            #         app.config['UPLOAD_FOLDER'], unique_filename))
+            # except Exception as e:
+            #     app.logger.error(f"File save error: {e}")
+            #     flash("Failed to save file. Please try again.")
+            #     return redirect(request.url)
+
+            # image compression using PIL and save it to the upload folder
+            save_path = os.path.join(
+                app.config['UPLOAD_FOLDER'], unique_filename)
+
             try:
-                file.save(os.path.join(
-                    app.config['UPLOAD_FOLDER'], unique_filename))
+                # Compress and save image
+                compress_and_save_image(file, save_path)
             except Exception as e:
-                app.logger.error(f"File save error: {e}")
-                flash("Failed to save file. Please try again.")
+                app.logger.error(f"Image compression error: {e}")
+                flash("Image upload failed during compression. Please try again.")
                 return redirect(request.url)
 
             # Log the successful file upload
-            app.logger.info(f"File uploaded successfully: {unique_filename}")
+            app.logger.info(
+                f"File compressed & uploaded successfully: {unique_filename}")
 
             flash('Suggestion uploaded successfully!')
 
@@ -235,6 +387,44 @@ def suggestion():
             return redirect(request.url)
 
     return render_template('suggest_plant.html')
+
+
+# Routes for deleting plants from the database (approved ones public)..............
+
+@app.route('/delete_plant/<int:id>', methods=['POST'])
+def delete_plant(id):
+    conn = get_db_connection()
+    plant = conn.execute('SELECT * FROM plants WHERE id = ?', (id,)).fetchone()
+
+    if plant is None:
+        flash("Plant not found.", "danger")
+        return redirect(url_for('dashboard'))
+
+    image_filename = plant['image_filename']
+    plant_name = plant['plant_name']
+
+    try:
+        if image_filename:
+            image_path = os.path.join(
+                app.config['UPLOAD_FOLDER'], image_filename)
+            if os.path.exists(image_path):
+                os.remove(image_path)
+                app.logger.info(f"Deleted plant image: {image_filename}")
+
+        conn.execute('DELETE FROM plants WHERE id = ?', (id,))
+        conn.commit()
+        flash(f"Deleted plant: '{plant_name}'", "success")
+    except Exception as e:
+        app.logger.error(f"Error deleting plant ID {id}: {e}")
+        flash("Failed to delete the plant.", "danger")
+    finally:
+        conn.close()
+
+    # return redirect(url_for('dashboard'))
+    return redirect(url_for('dashboard', view='approved'))
+
+
+# end of routes for deleting plants from the database (approved ones public)..............
 
 
 @app.route('/thanks')
