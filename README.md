@@ -42,9 +42,11 @@ Taken 5 plants. *(default experimental)*
 ## 🚀 Setup Instructions
 
 1. Clone repo:  
-   `git clone <repo-url>`
+   `git clone https://github.com/taotab/plant_library.git`
 2. Install dependencies:  
    `pip install -r requirements.txt`
+3. Run init_db.py:
+   `python init_db.py`
 3. Run the app:  
    `flask run`
 4. Visit `http://localhost:5000` in browser. *(all viewing devices be in same network)*
