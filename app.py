@@ -451,11 +451,12 @@ def login():
 
         if user:
             session['username'] = user['username']
+            flash('Login successful!', 'success')
             return redirect(url_for('index'))
         else:
-            error = 'Invalid Credentials. Please try again.'
+            flash('Invalid credentials. Please try again.', 'danger')
 
-    return render_template('login.html', error=error)
+    return render_template('login.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -468,13 +469,13 @@ def register():
 
         # Check if the passwords match
         if password != confirm_password:
-            error = 'Passwords do not match.'
-            return render_template('register.html', error=error)
+            flash('Passwords do not match.', 'danger')
+            return render_template('register.html')
 
         # Check if the password is strong
         if not is_strong_password(password):
-            error = 'Password must be at least 8 characters long and contain uppercase, lowercase, digits, and special characters.'
-            return render_template('register.html', error=error)
+            flash('Password must be at least 8 characters and include uppercase, lowercase, digits, and special characters.', 'danger')
+            return render_template('register.html')
 
         try:
             conn = get_db_connection()
@@ -484,13 +485,14 @@ def register():
             )
             conn.commit()
             conn.close()
+            flash('Registration successful. Please log in.', 'success')
             return redirect(url_for('login'))
         # Handle the case where the username already exists
         # username TEXT UNIQUE.. see this code in schema.sql, That UNIQUE makes sure no two rows can have the same username.
         except sqlite3.IntegrityError:
-            error = 'Username already exists.'
+            flash('Username already exists.', 'warning')
 
-    return render_template('register.html', error=error)
+    return render_template('register.html')
 
 
 @app.route('/logout')

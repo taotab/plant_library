@@ -14532,3 +14532,213 @@ dsf.......
 2025-05-10 08:51:03,687 - INFO - 127.0.0.1 - - [10/May/2025 08:51:03] "[36mGET /static/uploads/1746833565_fenugreek_methi.webp HTTP/1.1[0m" 304 -
 2025-05-10 08:51:03,688 - INFO - 127.0.0.1 - - [10/May/2025 08:51:03] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
 2025-05-10 08:51:03,688 - INFO - 127.0.0.1 - - [10/May/2025 08:51:03] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 17:49:35,402 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.31:5000
+2025-05-12 17:49:35,402 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-12 17:49:35,405 - INFO -  * Restarting with stat
+2025-05-12 17:49:35,591 - WARNING -  * Debugger is active!
+2025-05-12 17:49:35,641 - INFO -  * Debugger PIN: 134-063-300
+2025-05-12 17:49:37,933 - INFO - 127.0.0.1 - - [12/May/2025 17:49:37] "GET / HTTP/1.1" 200 -
+2025-05-12 17:49:38,007 - INFO - 127.0.0.1 - - [12/May/2025 17:49:38] "GET /static/img/classification.png HTTP/1.1" 200 -
+2025-05-12 17:49:38,008 - INFO - 127.0.0.1 - - [12/May/2025 17:49:38] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-05-12 17:49:38,008 - INFO - 127.0.0.1 - - [12/May/2025 17:49:38] "GET /static/img/medicine41.png HTTP/1.1" 200 -
+2025-05-12 17:49:38,043 - INFO - 127.0.0.1 - - [12/May/2025 17:49:38] "GET /static/img/branch.png HTTP/1.1" 200 -
+2025-05-12 17:49:38,050 - INFO - 127.0.0.1 - - [12/May/2025 17:49:38] "GET /static/img/cannabis.webp HTTP/1.1" 200 -
+2025-05-12 17:49:38,054 - INFO - 127.0.0.1 - - [12/May/2025 17:49:38] "GET /static/img/click_plant.jpg HTTP/1.1" 200 -
+2025-05-12 17:49:38,067 - INFO - 127.0.0.1 - - [12/May/2025 17:49:38] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-05-12 17:49:38,071 - INFO - 127.0.0.1 - - [12/May/2025 17:49:38] "GET /static/logos/leaf31.png HTTP/1.1" 200 -
+2025-05-12 17:49:38,084 - INFO - 127.0.0.1 - - [12/May/2025 17:49:38] "GET /static/img/review_plant1.jpeg HTTP/1.1" 200 -
+2025-05-12 17:49:38,088 - INFO - 127.0.0.1 - - [12/May/2025 17:49:38] "GET /static/img/explore_plant.jpg HTTP/1.1" 200 -
+2025-05-12 17:49:38,502 - INFO - 127.0.0.1 - - [12/May/2025 17:49:38] "GET /static/img/cover_back.png HTTP/1.1" 200 -
+2025-05-12 17:49:38,926 - INFO - 127.0.0.1 - - [12/May/2025 17:49:38] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 17:49:41,349 - INFO - 127.0.0.1 - - [12/May/2025 17:49:41] "GET /login HTTP/1.1" 200 -
+2025-05-12 17:49:41,413 - INFO - 127.0.0.1 - - [12/May/2025 17:49:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 17:49:41,419 - INFO - 127.0.0.1 - - [12/May/2025 17:49:41] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 17:49:41,421 - INFO - 127.0.0.1 - - [12/May/2025 17:49:41] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 17:49:41,433 - INFO - 127.0.0.1 - - [12/May/2025 17:49:41] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 17:51:08,364 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.31:5000
+2025-05-12 17:51:08,364 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-12 17:51:08,365 - INFO -  * Restarting with stat
+2025-05-12 17:51:08,537 - WARNING -  * Debugger is active!
+2025-05-12 17:51:08,538 - INFO -  * Debugger PIN: 134-063-300
+2025-05-12 17:52:44,029 - INFO - 127.0.0.1 - - [12/May/2025 17:52:44] "GET /login HTTP/1.1" 200 -
+2025-05-12 17:52:44,358 - INFO - 127.0.0.1 - - [12/May/2025 17:52:44] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 17:52:46,632 - INFO - 127.0.0.1 - - [12/May/2025 17:52:46] "GET /login HTTP/1.1" 200 -
+2025-05-12 17:52:46,677 - INFO - 127.0.0.1 - - [12/May/2025 17:52:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 17:52:46,679 - INFO - 127.0.0.1 - - [12/May/2025 17:52:46] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 17:52:46,680 - INFO - 127.0.0.1 - - [12/May/2025 17:52:46] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 17:52:46,709 - INFO - 127.0.0.1 - - [12/May/2025 17:52:46] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 17:52:46,811 - INFO - 127.0.0.1 - - [12/May/2025 17:52:46] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 17:52:48,142 - INFO - 127.0.0.1 - - [12/May/2025 17:52:48] "GET /index HTTP/1.1" 200 -
+2025-05-12 17:52:48,216 - INFO - 127.0.0.1 - - [12/May/2025 17:52:48] "GET /static/uploads/1746833115_aloe_vera.webp HTTP/1.1" 200 -
+2025-05-12 17:52:48,217 - INFO - 127.0.0.1 - - [12/May/2025 17:52:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 17:52:48,219 - INFO - 127.0.0.1 - - [12/May/2025 17:52:48] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 17:52:48,221 - INFO - 127.0.0.1 - - [12/May/2025 17:52:48] "GET /static/uploads/1746833333_chamomile.webp HTTP/1.1" 200 -
+2025-05-12 17:52:48,227 - INFO - 127.0.0.1 - - [12/May/2025 17:52:48] "GET /static/uploads/1746833565_fenugreek_methi.webp HTTP/1.1" 200 -
+2025-05-12 17:52:48,230 - INFO - 127.0.0.1 - - [12/May/2025 17:52:48] "GET /static/uploads/1746833654_Stevia.webp HTTP/1.1" 200 -
+2025-05-12 17:52:48,238 - INFO - 127.0.0.1 - - [12/May/2025 17:52:48] "GET /static/uploads/1746833760_tulsi.jpg HTTP/1.1" 200 -
+2025-05-12 17:52:48,243 - INFO - 127.0.0.1 - - [12/May/2025 17:52:48] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 17:52:51,087 - INFO - 127.0.0.1 - - [12/May/2025 17:52:51] "GET /login HTTP/1.1" 200 -
+2025-05-12 17:52:51,147 - INFO - 127.0.0.1 - - [12/May/2025 17:52:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 17:52:51,153 - INFO - 127.0.0.1 - - [12/May/2025 17:52:51] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 17:52:51,158 - INFO - 127.0.0.1 - - [12/May/2025 17:52:51] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 17:52:51,177 - INFO - 127.0.0.1 - - [12/May/2025 17:52:51] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 17:52:59,084 - INFO - 127.0.0.1 - - [12/May/2025 17:52:59] "POST /login HTTP/1.1" 200 -
+2025-05-12 17:52:59,117 - INFO - 127.0.0.1 - - [12/May/2025 17:52:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 17:52:59,141 - INFO - 127.0.0.1 - - [12/May/2025 17:52:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 17:52:59,142 - INFO - 127.0.0.1 - - [12/May/2025 17:52:59] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 17:52:59,161 - INFO - 127.0.0.1 - - [12/May/2025 17:52:59] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 17:53:09,532 - INFO - 127.0.0.1 - - [12/May/2025 17:53:09] "GET /login HTTP/1.1" 200 -
+2025-05-12 17:53:09,587 - INFO - 127.0.0.1 - - [12/May/2025 17:53:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 17:53:09,598 - INFO - 127.0.0.1 - - [12/May/2025 17:53:09] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 17:53:09,601 - INFO - 127.0.0.1 - - [12/May/2025 17:53:09] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 17:53:09,629 - INFO - 127.0.0.1 - - [12/May/2025 17:53:09] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 17:53:10,695 - INFO - 127.0.0.1 - - [12/May/2025 17:53:10] "GET /login HTTP/1.1" 200 -
+2025-05-12 17:53:10,769 - INFO - 127.0.0.1 - - [12/May/2025 17:53:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 17:53:10,772 - INFO - 127.0.0.1 - - [12/May/2025 17:53:10] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 17:53:10,783 - INFO - 127.0.0.1 - - [12/May/2025 17:53:10] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 17:53:10,798 - INFO - 127.0.0.1 - - [12/May/2025 17:53:10] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 17:53:31,064 - INFO - 127.0.0.1 - - [12/May/2025 17:53:31] "POST /login HTTP/1.1" 200 -
+2025-05-12 17:53:31,126 - INFO - 127.0.0.1 - - [12/May/2025 17:53:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 17:53:31,128 - INFO - 127.0.0.1 - - [12/May/2025 17:53:31] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 17:53:31,132 - INFO - 127.0.0.1 - - [12/May/2025 17:53:31] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 17:53:31,145 - INFO - 127.0.0.1 - - [12/May/2025 17:53:31] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:05:38,757 - INFO -  * Detected change in '/home/tab/repos/plant_library/app.py', reloading
+2025-05-12 18:05:38,814 - INFO -  * Restarting with stat
+2025-05-12 18:05:38,993 - WARNING -  * Debugger is active!
+2025-05-12 18:05:38,994 - INFO -  * Debugger PIN: 134-063-300
+2025-05-12 18:07:11,776 - INFO -  * Detected change in '/home/tab/repos/plant_library/app.py', reloading
+2025-05-12 18:07:11,825 - INFO -  * Restarting with stat
+2025-05-12 18:07:11,974 - WARNING -  * Debugger is active!
+2025-05-12 18:07:11,975 - INFO -  * Debugger PIN: 134-063-300
+2025-05-12 18:09:48,893 - INFO -  * Detected change in '/home/tab/repos/plant_library/app.py', reloading
+2025-05-12 18:09:48,933 - INFO -  * Restarting with stat
+2025-05-12 18:09:49,097 - WARNING -  * Debugger is active!
+2025-05-12 18:09:49,097 - INFO -  * Debugger PIN: 134-063-300
+2025-05-12 18:10:52,768 - INFO - 127.0.0.1 - - [12/May/2025 18:10:52] "POST /login HTTP/1.1" 200 -
+2025-05-12 18:10:52,846 - INFO - 127.0.0.1 - - [12/May/2025 18:10:52] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:10:52,848 - INFO - 127.0.0.1 - - [12/May/2025 18:10:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:10:52,875 - INFO - 127.0.0.1 - - [12/May/2025 18:10:52] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:10:53,120 - INFO - 127.0.0.1 - - [12/May/2025 18:10:53] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:10:53,202 - INFO - 127.0.0.1 - - [12/May/2025 18:10:53] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:10:58,926 - INFO - 127.0.0.1 - - [12/May/2025 18:10:58] "POST /login HTTP/1.1" 200 -
+2025-05-12 18:10:58,988 - INFO - 127.0.0.1 - - [12/May/2025 18:10:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:10:58,993 - INFO - 127.0.0.1 - - [12/May/2025 18:10:58] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:10:58,998 - INFO - 127.0.0.1 - - [12/May/2025 18:10:58] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:10:59,026 - INFO - 127.0.0.1 - - [12/May/2025 18:10:59] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:11:31,817 - INFO - 127.0.0.1 - - [12/May/2025 18:11:31] "POST /login HTTP/1.1" 200 -
+2025-05-12 18:11:31,862 - INFO - 127.0.0.1 - - [12/May/2025 18:11:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:11:31,863 - INFO - 127.0.0.1 - - [12/May/2025 18:11:31] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:11:31,871 - INFO - 127.0.0.1 - - [12/May/2025 18:11:31] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:11:31,914 - INFO - 127.0.0.1 - - [12/May/2025 18:11:31] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:11:51,456 - INFO - 127.0.0.1 - - [12/May/2025 18:11:51] "GET /login HTTP/1.1" 200 -
+2025-05-12 18:11:51,505 - INFO - 127.0.0.1 - - [12/May/2025 18:11:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:11:51,507 - INFO - 127.0.0.1 - - [12/May/2025 18:11:51] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:11:51,515 - INFO - 127.0.0.1 - - [12/May/2025 18:11:51] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:11:51,543 - INFO - 127.0.0.1 - - [12/May/2025 18:11:51] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:11:53,891 - INFO - 127.0.0.1 - - [12/May/2025 18:11:53] "GET /register HTTP/1.1" 200 -
+2025-05-12 18:11:53,938 - INFO - 127.0.0.1 - - [12/May/2025 18:11:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:11:53,943 - INFO - 127.0.0.1 - - [12/May/2025 18:11:53] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:11:53,945 - INFO - 127.0.0.1 - - [12/May/2025 18:11:53] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:11:53,959 - INFO - 127.0.0.1 - - [12/May/2025 18:11:53] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:11:59,633 - INFO - 127.0.0.1 - - [12/May/2025 18:11:59] "POST /register HTTP/1.1" 200 -
+2025-05-12 18:11:59,684 - INFO - 127.0.0.1 - - [12/May/2025 18:11:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:11:59,689 - INFO - 127.0.0.1 - - [12/May/2025 18:11:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:11:59,690 - INFO - 127.0.0.1 - - [12/May/2025 18:11:59] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:11:59,702 - INFO - 127.0.0.1 - - [12/May/2025 18:11:59] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:05,972 - INFO - 127.0.0.1 - - [12/May/2025 18:12:05] "POST /register HTTP/1.1" 200 -
+2025-05-12 18:12:06,022 - INFO - 127.0.0.1 - - [12/May/2025 18:12:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:12:06,030 - INFO - 127.0.0.1 - - [12/May/2025 18:12:06] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:12:06,031 - INFO - 127.0.0.1 - - [12/May/2025 18:12:06] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:06,042 - INFO - 127.0.0.1 - - [12/May/2025 18:12:06] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:33,151 - INFO - 127.0.0.1 - - [12/May/2025 18:12:33] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-05-12 18:12:33,158 - INFO - 127.0.0.1 - - [12/May/2025 18:12:33] "GET /login HTTP/1.1" 200 -
+2025-05-12 18:12:33,244 - INFO - 127.0.0.1 - - [12/May/2025 18:12:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:12:33,250 - INFO - 127.0.0.1 - - [12/May/2025 18:12:33] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:33,251 - INFO - 127.0.0.1 - - [12/May/2025 18:12:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:12:33,263 - INFO - 127.0.0.1 - - [12/May/2025 18:12:33] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:38,197 - INFO - 127.0.0.1 - - [12/May/2025 18:12:38] "GET /login HTTP/1.1" 200 -
+2025-05-12 18:12:38,241 - INFO - 127.0.0.1 - - [12/May/2025 18:12:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:12:38,246 - INFO - 127.0.0.1 - - [12/May/2025 18:12:38] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:12:38,247 - INFO - 127.0.0.1 - - [12/May/2025 18:12:38] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:38,269 - INFO - 127.0.0.1 - - [12/May/2025 18:12:38] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:45,840 - INFO - 127.0.0.1 - - [12/May/2025 18:12:45] "POST /login HTTP/1.1" 200 -
+2025-05-12 18:12:45,905 - INFO - 127.0.0.1 - - [12/May/2025 18:12:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:12:45,907 - INFO - 127.0.0.1 - - [12/May/2025 18:12:45] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:45,911 - INFO - 127.0.0.1 - - [12/May/2025 18:12:45] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:12:45,924 - INFO - 127.0.0.1 - - [12/May/2025 18:12:45] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:49,706 - INFO - 127.0.0.1 - - [12/May/2025 18:12:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-05-12 18:12:49,717 - INFO - 127.0.0.1 - - [12/May/2025 18:12:49] "GET /index HTTP/1.1" 200 -
+2025-05-12 18:12:49,778 - INFO - 127.0.0.1 - - [12/May/2025 18:12:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:12:49,782 - INFO - 127.0.0.1 - - [12/May/2025 18:12:49] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:49,786 - INFO - 127.0.0.1 - - [12/May/2025 18:12:49] "[36mGET /static/uploads/1746833115_aloe_vera.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:49,794 - INFO - 127.0.0.1 - - [12/May/2025 18:12:49] "[36mGET /static/uploads/1746833333_chamomile.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:49,825 - INFO - 127.0.0.1 - - [12/May/2025 18:12:49] "[36mGET /static/uploads/1746833565_fenugreek_methi.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:49,828 - INFO - 127.0.0.1 - - [12/May/2025 18:12:49] "[36mGET /static/uploads/1746833654_Stevia.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:49,833 - INFO - 127.0.0.1 - - [12/May/2025 18:12:49] "[36mGET /static/uploads/1746833760_tulsi.jpg HTTP/1.1[0m" 304 -
+2025-05-12 18:12:49,838 - INFO - 127.0.0.1 - - [12/May/2025 18:12:49] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:12:52,451 - INFO - 127.0.0.1 - - [12/May/2025 18:12:52] "GET / HTTP/1.1" 200 -
+2025-05-12 18:12:52,501 - INFO - 127.0.0.1 - - [12/May/2025 18:12:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:12:52,506 - INFO - 127.0.0.1 - - [12/May/2025 18:12:52] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:52,507 - INFO - 127.0.0.1 - - [12/May/2025 18:12:52] "[36mGET /static/img/classification.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:52,509 - INFO - 127.0.0.1 - - [12/May/2025 18:12:52] "[36mGET /static/img/medicine41.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:52,523 - INFO - 127.0.0.1 - - [12/May/2025 18:12:52] "[36mGET /static/img/branch.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:52,527 - INFO - 127.0.0.1 - - [12/May/2025 18:12:52] "[36mGET /static/img/cannabis.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:52,531 - INFO - 127.0.0.1 - - [12/May/2025 18:12:52] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:12:52,532 - INFO - 127.0.0.1 - - [12/May/2025 18:12:52] "[36mGET /static/img/click_plant.jpg HTTP/1.1[0m" 304 -
+2025-05-12 18:12:52,539 - INFO - 127.0.0.1 - - [12/May/2025 18:12:52] "[36mGET /static/img/review_plant1.jpeg HTTP/1.1[0m" 304 -
+2025-05-12 18:12:52,539 - INFO - 127.0.0.1 - - [12/May/2025 18:12:52] "[36mGET /static/img/explore_plant.jpg HTTP/1.1[0m" 304 -
+2025-05-12 18:12:52,548 - INFO - 127.0.0.1 - - [12/May/2025 18:12:52] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:54,569 - INFO - 127.0.0.1 - - [12/May/2025 18:12:54] "GET /index HTTP/1.1" 200 -
+2025-05-12 18:12:54,628 - INFO - 127.0.0.1 - - [12/May/2025 18:12:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:12:54,636 - INFO - 127.0.0.1 - - [12/May/2025 18:12:54] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:54,637 - INFO - 127.0.0.1 - - [12/May/2025 18:12:54] "[36mGET /static/uploads/1746833115_aloe_vera.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:54,649 - INFO - 127.0.0.1 - - [12/May/2025 18:12:54] "[36mGET /static/uploads/1746833565_fenugreek_methi.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:54,658 - INFO - 127.0.0.1 - - [12/May/2025 18:12:54] "[36mGET /static/uploads/1746833760_tulsi.jpg HTTP/1.1[0m" 304 -
+2025-05-12 18:12:54,659 - INFO - 127.0.0.1 - - [12/May/2025 18:12:54] "[36mGET /static/uploads/1746833333_chamomile.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:54,661 - INFO - 127.0.0.1 - - [12/May/2025 18:12:54] "[36mGET /static/uploads/1746833654_Stevia.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:54,662 - INFO - 127.0.0.1 - - [12/May/2025 18:12:54] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:12:56,264 - INFO - 127.0.0.1 - - [12/May/2025 18:12:56] "GET /dashboard HTTP/1.1" 200 -
+2025-05-12 18:12:56,315 - INFO - 127.0.0.1 - - [12/May/2025 18:12:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:12:56,325 - INFO - 127.0.0.1 - - [12/May/2025 18:12:56] "[36mGET /static/uploads/1746833760_tulsi.jpg HTTP/1.1[0m" 304 -
+2025-05-12 18:12:56,330 - INFO - 127.0.0.1 - - [12/May/2025 18:12:56] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:56,330 - INFO - 127.0.0.1 - - [12/May/2025 18:12:56] "[36mGET /static/uploads/1746833654_Stevia.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:56,340 - INFO - 127.0.0.1 - - [12/May/2025 18:12:56] "[36mGET /static/uploads/1746833565_fenugreek_methi.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:56,342 - INFO - 127.0.0.1 - - [12/May/2025 18:12:56] "[36mGET /static/uploads/1746833333_chamomile.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:56,345 - INFO - 127.0.0.1 - - [12/May/2025 18:12:56] "[36mGET /static/uploads/1746833115_aloe_vera.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:56,347 - INFO - 127.0.0.1 - - [12/May/2025 18:12:56] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:12:59,768 - INFO - 127.0.0.1 - - [12/May/2025 18:12:59] "GET / HTTP/1.1" 200 -
+2025-05-12 18:12:59,830 - INFO - 127.0.0.1 - - [12/May/2025 18:12:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:12:59,836 - INFO - 127.0.0.1 - - [12/May/2025 18:12:59] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:59,837 - INFO - 127.0.0.1 - - [12/May/2025 18:12:59] "[36mGET /static/img/medicine41.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:59,844 - INFO - 127.0.0.1 - - [12/May/2025 18:12:59] "[36mGET /static/img/classification.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:59,850 - INFO - 127.0.0.1 - - [12/May/2025 18:12:59] "[36mGET /static/img/branch.png HTTP/1.1[0m" 304 -
+2025-05-12 18:12:59,853 - INFO - 127.0.0.1 - - [12/May/2025 18:12:59] "[36mGET /static/img/cannabis.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:12:59,854 - INFO - 127.0.0.1 - - [12/May/2025 18:12:59] "[36mGET /static/img/click_plant.jpg HTTP/1.1[0m" 304 -
+2025-05-12 18:12:59,861 - INFO - 127.0.0.1 - - [12/May/2025 18:12:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:12:59,864 - INFO - 127.0.0.1 - - [12/May/2025 18:12:59] "[36mGET /static/img/review_plant1.jpeg HTTP/1.1[0m" 304 -
+2025-05-12 18:12:59,870 - INFO - 127.0.0.1 - - [12/May/2025 18:12:59] "[36mGET /static/img/explore_plant.jpg HTTP/1.1[0m" 304 -
+2025-05-12 18:12:59,899 - INFO - 127.0.0.1 - - [12/May/2025 18:12:59] "[36mGET /static/img/cover_back.png HTTP/1.1[0m" 304 -
+2025-05-12 18:13:01,262 - INFO - 127.0.0.1 - - [12/May/2025 18:13:01] "GET /index HTTP/1.1" 200 -
+2025-05-12 18:13:01,333 - INFO - 127.0.0.1 - - [12/May/2025 18:13:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:13:01,339 - INFO - 127.0.0.1 - - [12/May/2025 18:13:01] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:13:01,341 - INFO - 127.0.0.1 - - [12/May/2025 18:13:01] "[36mGET /static/uploads/1746833115_aloe_vera.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:13:01,343 - INFO - 127.0.0.1 - - [12/May/2025 18:13:01] "[36mGET /static/uploads/1746833333_chamomile.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:13:01,358 - INFO - 127.0.0.1 - - [12/May/2025 18:13:01] "[36mGET /static/uploads/1746833760_tulsi.jpg HTTP/1.1[0m" 304 -
+2025-05-12 18:13:01,359 - INFO - 127.0.0.1 - - [12/May/2025 18:13:01] "[36mGET /static/uploads/1746833654_Stevia.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:13:01,360 - INFO - 127.0.0.1 - - [12/May/2025 18:13:01] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-05-12 18:13:01,360 - INFO - 127.0.0.1 - - [12/May/2025 18:13:01] "[36mGET /static/uploads/1746833565_fenugreek_methi.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:13:02,281 - INFO - 127.0.0.1 - - [12/May/2025 18:13:02] "GET /dashboard HTTP/1.1" 200 -
+2025-05-12 18:13:02,345 - INFO - 127.0.0.1 - - [12/May/2025 18:13:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-12 18:13:02,354 - INFO - 127.0.0.1 - - [12/May/2025 18:13:02] "[36mGET /static/uploads/1746833760_tulsi.jpg HTTP/1.1[0m" 304 -
+2025-05-12 18:13:02,358 - INFO - 127.0.0.1 - - [12/May/2025 18:13:02] "[36mGET /static/logos/leaf31.png HTTP/1.1[0m" 304 -
+2025-05-12 18:13:02,359 - INFO - 127.0.0.1 - - [12/May/2025 18:13:02] "[36mGET /static/uploads/1746833654_Stevia.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:13:02,373 - INFO - 127.0.0.1 - - [12/May/2025 18:13:02] "[36mGET /static/uploads/1746833565_fenugreek_methi.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:13:02,377 - INFO - 127.0.0.1 - - [12/May/2025 18:13:02] "[36mGET /static/uploads/1746833333_chamomile.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:13:02,380 - INFO - 127.0.0.1 - - [12/May/2025 18:13:02] "[36mGET /static/uploads/1746833115_aloe_vera.webp HTTP/1.1[0m" 304 -
+2025-05-12 18:13:02,391 - INFO - 127.0.0.1 - - [12/May/2025 18:13:02] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -

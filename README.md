@@ -1,10 +1,12 @@
-# plant_library
+# 🌿 Plant Library – Ayurvedic Plant Portal
 
-## Topic: Virtual garden for Ayurvedic Plants
+## 📖 Project Overview
 
->Note: Learn about the benefits of Ayurvedic plants.
->Help in front-end only.
-Taken 5 plants.
+A virtual garden to explore and manage information about Ayurvedic plants.  
+Users can submit new plant suggestions, while admins can review, edit, and approve them into a permanent library.
+
+
+Taken 5 plants. *(default experimental)*
 
 - Tulsi
 - Aloe vera
@@ -12,26 +14,59 @@ Taken 5 plants.
 - Stevia
 - Fenugreek/methi
 
-### Things to add later:
-
-- Image (if possible interactive)
-- Name (local and scientific, its classification family)
-- How to use it
-- Maybe small animation (hover effect/faze)
-- *About page: simple page about ayurveda/project.
-- Login user page (sessions, sqlite database, etc)
-
-### Things to consider??
-
-- Add backend? (flask py.)
-- Do 3D window?
-- Interactive plants parts click on photo details?
-
->**[Note]** Remotely access to trihms pc
-> Using git here, (pw- *tp*) for ssh key (personal...)
-
-## 📜 Changelog
-
-See [CHANGELOG.md](./CHANGELOG.md) for details on updates and version history.
+---
 
 
+## ✨ Features
+
+- 🖼️ Suggestion box for crowd public, a plant with name, location, and image.
+- 🛠️ Admin dashboard to approve, delete, or edit suggestions.
+- 🔐 Login & registration with session management.
+- 📁 Approved plants shown in dedicated section.
+- 📷 Image upload and auto-deletion upon plant removal, along with image compression using `PIL` (pillow library).
+- 🎛️ Clean, toggle-based UI for pending vs approved plants.
+
+---
+
+## 🧰 Tech Stack
+
+- **Frontend**: HTML, Bootstrap, JS
+- **Backend**: Python, Flask
+- **Database**: SQLite3
+- **File Uploads**: Local storage (`/static/uploads`)
+- **Other Images**: Local Storage (`/static/img`) & (`/static/logos`)
+
+---
+
+
+## 🚀 Setup Instructions
+
+1. Clone repo:  
+   `git clone <repo-url>`
+2. Install dependencies:  
+   `pip install -r requirements.txt`
+3. Run the app:  
+   `flask run`
+4. Visit `http://localhost:5000` in browser. *(all viewing devices be in same network)*
+
+---
+
+## 📜 Documentation
+
+- [`CHANGELOG.md`](./CHANGELOG.md): Version history and updates.
+- [`notes.md`](./notes.md): Dev notes, design decisions, and future ideas.
+
+---
+
+## ✅ Admin Credentials (Demo)
+
+Use `admin / P@ssword123` to log in (if seeded).
+
+---
+
+## 🔮 Planned Features
+
+- Search/filter by plant type or location.
+- Tag system (e.g., Medicinal, Edible, etc.)
+- Optional animations or hover info on plant cards.
+- Hashed password storage.

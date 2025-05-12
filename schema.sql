@@ -1,5 +1,10 @@
 -- schema.sql
 
+-- This SQL script creates the necessary tables for the plant suggestion application.
+-- Use below query command to delete all entried (fresh start) for the particular table in the database.
+-- DROP TABLE IF EXISTS <table_name>;
+
+
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT UNIQUE NOT NULL,
