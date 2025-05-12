@@ -1,8 +1,9 @@
-your_project/
+plant_library/
 │
 ├── app.py                  # Main Flask application
 ├── database.db             # SQLite database
 ├── init_db.py              # One-time DB setup script (can be deleted later)
+├── schema.sql              # DB schema (for table creation)
 │
 ├── db/
 │   └── helpers.py          # DB functions (insert_suggestion, get_db_connection, etc.), image compression
@@ -13,6 +14,4 @@ your_project/
 │   ├── thanks.html
 │   └── register.html
 │
-├── static/                 # CSS, JS, uploaded images (if served)
-│
-└── schema.sql              # DB schema (for table creation)
+└──static/                 # CSS, JS, uploaded images & logos (if served)

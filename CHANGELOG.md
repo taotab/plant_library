@@ -5,30 +5,28 @@ This file follows a simplified version of [Keep a Changelog](https://keepachange
 Dates are in `YYYY-MM-DD` format.
 
 ## Purpose: Record of what has changed over time. (Added/changed/removed/fixed)
----
 
 
-## [Unreleased]
+## [1.0.0] - 2025-05-12
 
 ### Added
-- Placeholder section for future planned features.
-- Dynamic routing instead of hardcoding for every page's route in flask.
-- `README.md` for project overview.
-- Added login feature, using session from flask.
+- Admin dashboard to manage plant suggestions and approved plants.
+- Edit, Approve, and Delete functionality with modals.
+- Upload image support for plant suggestions.
+- Image compression using PIL python, before saving images for better efficiency, web rendering and less storage.
+- SQLite-backed storage for user credentials and plant records.
+- Separation of suggestions and approved plants in dashboard view.
+- Login/register with password validation, session-based login protection.
+- Documentations added for README, NOTES.
 
----
+### Changed
+- Admin view now shows suggestions and approved plants using toggle sections.
+- Dashboard buttons use icons and modals for better UX.
 
-## 🛠 Later Future Enhancements
-
-Upload plant name + description along with image (not just the file).
-
-Store info in a database (SQLite).
-
-Create a real "Plant page" dynamically.
-
-Improve image resizing (make smaller thumbnails).
-
-Add tags, search, filter (e.g., "Show only Medicinal Plants").
+### Fixed
+- Image file deletion now handled with database record removal.
+- Bug with view persistence (toggle) when redirecting after actions.
+- Session protection for admin-only pages.
 
 ---
 
@@ -77,6 +75,18 @@ Add tags, search, filter (e.g., "Show only Medicinal Plants").
 - Initial commit to Git.
 
 ---
+
+## [Unreleased]
+- (Placeholder for future planned features like search, filtering, tags, etc.)
+
+---
+
+## 🛠 Future Enhancements
+
+- Implement tags, categories, and search filters.
+- Add image resizing/thumbnails for optimization.
+- Allow multiple admins with roles/permissions.
+- Optional: hash passwords using `werkzeug.security`.
 
 ## Notes
 

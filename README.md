@@ -42,13 +42,16 @@ Taken 5 plants. *(default experimental)*
 ## 🚀 Setup Instructions
 
 1. Clone repo:  
-   `git clone https://github.com/taotab/plant_library.git`
+   - `git clone https://github.com/taotab/plant_library.git`
+   - `cd plant_library`
 2. Install dependencies:  
-   `pip install -r requirements.txt`
+   - `pip install -r requirements.txt`
+   - (Use pip3 if needed, depending on your system)
 3. Run init_db.py:
-   `python init_db.py`
+   - `python init_db.py`
+   - (This reads schema.sql and sets up the SQLite database database.db in the root directory)
 3. Run the app:  
-   `flask run`
+   - `flask run`
 4. Visit `http://localhost:5000` in browser. *(all viewing devices be in same network)*
 
 ---
@@ -72,3 +75,4 @@ Use `admin / P@ssword123` to log in (if seeded).
 - Tag system (e.g., Medicinal, Edible, etc.)
 - Optional animations or hover info on plant cards.
 - Hashed password storage.
+- Deploy online in hosting sites like Render, Pythonanywhere, etc.
