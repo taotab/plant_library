@@ -59,7 +59,7 @@ Taken 5 plants. *(default experimental)*
 ## 📜 Documentation
 
 - [`CHANGELOG.md`](./CHANGELOG.md): Version history and updates.
-- [`notes.md`](./notes.md): Dev notes, design decisions, and future ideas.
+- [`notes.md`](./NOTES.md): Dev notes, design decisions, and future ideas.
 
 ---
 
