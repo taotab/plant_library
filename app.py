@@ -85,20 +85,40 @@ def about():
 
 
 # Loop over all images in the static folder, and show them in the index.html page
+# @app.route('/index')
+# def index():
+#     conn = get_db_connection()
+#     plants = conn.execute('SELECT * FROM plants').fetchall()
+#     conn.close()
+#     return render_template('index.html', plants=plants)
+
 @app.route('/index')
 def index():
-    # image_folder = os.path.join('static', 'plants_img')
-    # List all image filenames
-    # images = os.listdir(image_folder)
-    # images = [img for img in images if img.endswith(
-    #     ('png', 'jpg', 'jpeg', 'gif', 'webp'))]
-
-    # return render_template('index2.html', images=images)
+    query = request.args.get('q', '').strip()
+    page = int(request.args.get('page', 1))  # current page
+    per_page = 6  # number of plants per page
+    offset = (page - 1) * per_page
 
     conn = get_db_connection()
-    plants = conn.execute('SELECT * FROM plants').fetchall()
+    if query:
+        total = conn.execute('''
+            SELECT COUNT(*) FROM plants
+            WHERE plant_name LIKE ? OR description LIKE ? OR location LIKE ? OR plant_type LIKE ?
+        ''', (f'%{query}%', f'%{query}%', f'%{query}%', f'%{query}%')).fetchone()[0]
+
+        plants = conn.execute('''
+            SELECT * FROM plants
+            WHERE plant_name LIKE ? OR description LIKE ? OR location LIKE ? OR plant_type LIKE ? ORDER BY id DESC LiMIT ? OFFSET ?
+        ''', (f'%{query}%', f'%{query}%', f'%{query}%', f'%{query}%', per_page, offset)).fetchall()
+    else:
+        total = conn.execute('SELECT COUNT(*) FROM plants').fetchone()[0]
+        plants = conn.execute(
+            '''SELECT * FROM plants ORDER BY id DESC LIMIT ? OFFSET ?''', (per_page, offset)).fetchall()
     conn.close()
-    return render_template('index.html', plants=plants)
+    # Calculate total pages needed, using ceiling division trick...
+    total_pages = (total + per_page - 1) // per_page
+
+    return render_template('index.html', plants=plants, total_pages=total_pages)
 
 
 # route for dynamic plant detail pages (experimental).......................
@@ -127,21 +147,64 @@ def plant_page(plant_name):
 
 # Pending uploads dashboard page route
 
+# @app.route('/dashboard')
+# def dashboard():
+
+#     if not 'username' in session:
+#         return redirect(url_for('login'))
+
+#     # admin logic
+#     conn = get_db_connection()
+#     suggestions = conn.execute(
+#         'SELECT * FROM suggestions ORDER BY id DESC').fetchall()
+#     plants = conn.execute('SELECT * FROM plants ORDER BY id DESC').fetchall()
+#     conn.close()
+#     # Read view from query param
+#     view = request.args.get('view', 'pending')
+#     return render_template('dashboard.html', suggestions=suggestions, plants=plants, current_view=view)
+
+
 @app.route('/dashboard')
 def dashboard():
-
-    if not 'username' in session:
+    if 'username' not in session:
         return redirect(url_for('login'))
 
-    # admin logic
     conn = get_db_connection()
-    suggestions = conn.execute(
-        'SELECT * FROM suggestions ORDER BY id DESC').fetchall()
-    plants = conn.execute('SELECT * FROM plants ORDER BY id DESC').fetchall()
-    conn.close()
-    # Read view from query param
     view = request.args.get('view', 'pending')
-    return render_template('dashboard.html', suggestions=suggestions, plants=plants, current_view=view)
+    q = request.args.get('q', '').lower().strip()
+
+    suggestions = []
+    plants = []
+
+    if view == 'pending':
+        if q:
+            suggestions = conn.execute("""
+                SELECT * FROM suggestions
+                WHERE LOWER(plant_name) LIKE ? OR LOWER(description) LIKE ?
+                      OR LOWER(location) LIKE ? OR LOWER(plant_type) LIKE ?
+                ORDER BY id DESC
+            """, tuple(f"%{q}%" for _ in range(4))).fetchall()
+        else:
+            suggestions = conn.execute(
+                "SELECT * FROM suggestions ORDER BY id DESC").fetchall()
+
+    elif view == 'approved':
+        if q:
+            plants = conn.execute("""
+                SELECT * FROM plants
+                WHERE LOWER(plant_name) LIKE ? OR LOWER(description) LIKE ?
+                      OR LOWER(location) LIKE ? OR LOWER(plant_type) LIKE ?
+                ORDER BY id DESC
+            """, tuple(f"%{q}%" for _ in range(4))).fetchall()
+        else:
+            plants = conn.execute(
+                "SELECT * FROM plants ORDER BY id DESC").fetchall()
+
+    conn.close()
+    return render_template('dashboard.html',
+                           suggestions=suggestions,
+                           plants=plants,
+                           current_view=view)
 
 
 # suggestion updates codes:...........................

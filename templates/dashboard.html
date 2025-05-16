@@ -5,6 +5,35 @@
 
 <div class="container">
 
+    <!-- Search Form -->
+    <form class="d-flex w-50 mx-auto mb-3 mt-3" method="get" action="{{ url_for('dashboard') }}">
+        <input type="hidden" name="view" value="{{ current_view }}">
+        <input name="q" class="form-control me-2" type="search" placeholder="Search..."
+            value="{{ request.args.get('q', '') }}">
+        <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+
+    {% if request.args.get('q') %}
+    <div class="text-center mb-3">
+        <a href="{{ url_for('dashboard', view=current_view) }}" class="btn btn-sm btn-outline-secondary">Clear
+            search</a>
+    </div>
+    {% endif %}
+
+    <!-- View Toggle Buttons -->
+    <div class="text-center mb-4">
+        <a href="{{ url_for('dashboard', view='pending') }}"
+            class="btn btn-outline-primary btn-lg {% if current_view == 'pending' %}active{% endif %}">Pending
+            Uploads</a>
+        <a href="{{ url_for('dashboard', view='approved') }}"
+            class="btn btn-outline-success btn-lg {% if current_view == 'approved' %}active{% endif %}">Approved
+            Uploads</a>
+    </div>
+
+    <!-- {% if not plants %}
+    <p class="text-center mt-4 text-muted">No plants found matching your search.</p>
+    {% endif %} -->
+
     <!-- flash messages -->
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
@@ -20,16 +49,6 @@
     {% endif %}
     {% endwith %}
 
-    <div class="btn-group mb-4 d-flex justify-content-center" role="group" aria-label="Dashboard view toggle">
-        <input type="radio" class="btn-check" name="dashboardView" id="pendingToggle" autocomplete="off" checked>
-        <label class="btn btn-outline-primary btn-lg" for="pendingToggle" onclick="showSection('pending')">Pending
-            Uploads</label>
-
-        <input type="radio" class="btn-check" name="dashboardView" id="approvedToggle" autocomplete="off">
-        <label class="btn btn-outline-success btn-lg" for="approvedToggle" onclick="showSection('approved')">Approved
-            Plants</label>
-    </div>
-
 
     <div id="pending-section">
         <h1 class="mb-4">Pending Uploads</h1>
@@ -44,7 +63,7 @@
                     <th>Image</th>
                 </tr>
             </thead>
-            <tbody class="table-group-divider">
+            <tbody>
                 {% for s in suggestions %}
                 <tr>
                     <td>{{ s['timestamp'] | datetime_format }}</td>

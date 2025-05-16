@@ -4,6 +4,28 @@
 {% block content %}
 
 <div class="container">
+
+    <form class="d-flex w-50 mx-auto mt-3" method="get" action="{{ url_for('index') }}">
+        <input name="q" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+            value="{{ request.args.get('q', '') }}" />
+        <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+
+    {% if request.args.get('q') %}
+    <div class="text-center mt-2">
+        <a href="{{ url_for('index') }}" class="btn btn-sm btn-outline-secondary">
+            Clear search
+        </a>
+    </div>
+    {% endif %}
+
+
+    {% if not plants %}
+    <p class="text-center mt-4 text-muted">No plants found matching your search.</p>
+    {% endif %}
+
+
+
     <div class="album py-5">
         <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for plant in plants %}
@@ -23,6 +45,46 @@
             {% endfor %}
         </div>
     </div>
+
+    <!-- Pagination ...... -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <!-- page numbers, based on total rows plants result... -->
+            {% for p in range(1, total_pages + 1) %}
+            <li class="page-item"><a class="page-link" href="{{ url_for('index', page=p) }}">{{ p }}</a>
+            </li>
+            {% endfor %}
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </div>
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
 
 {% endblock %}
