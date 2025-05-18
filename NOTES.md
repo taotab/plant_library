@@ -2,6 +2,17 @@
 
 ## Purpose: Personal explanations, tips, observations, just for understanding
 
+### 🧭 Data Flow Summary (How it all works)
+
+- Public users submit plant suggestions via a form (with image upload).
+- The image is compressed using Pillow (PIL) and saved to /static/uploads.
+- Suggestions are stored in the suggestions table.
+- Admin logs in via the dashboard to view, edit, approve, or delete suggestions.
+- Upon approval, the suggestion (with any edits) is copied into the plants table and displayed on the public Index page.
+- Deleting a suggestion or approved plant also removes the image from disk for cleanup.
+
+---
+
 ### 🔐 Flask Sessions
 
 - Flask is stateless; it forgets everything going to other pages. 
@@ -19,7 +30,7 @@
 
 ---
 
-### Directory uploads usage
+### 📁 Directory uploads usage
 
 - **Note-** Use absolute path of files in python and flask in same code directory by default to save headache and errors and robustness of code consistency. 
 - Issues occur with vscode working directory and script local directory.
