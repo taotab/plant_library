@@ -1,3 +1,4 @@
+from math import ceil
 from flask import Flask, render_template, request, redirect, url_for, session, flash, abort
 from werkzeug.utils import secure_filename
 import time
@@ -118,7 +119,7 @@ def index():
     # Calculate total pages needed, using ceiling division trick...
     total_pages = (total + per_page - 1) // per_page
 
-    return render_template('index.html', plants=plants, total_pages=total_pages)
+    return render_template('index.html', plants=plants, total_pages=total_pages, page=page)
 
 
 # route for dynamic plant detail pages (experimental).......................
@@ -147,21 +148,48 @@ def plant_page(plant_name):
 
 # Pending uploads dashboard page route
 
+
 # @app.route('/dashboard')
 # def dashboard():
-
-#     if not 'username' in session:
+#     if 'username' not in session:
 #         return redirect(url_for('login'))
 
-#     # admin logic
 #     conn = get_db_connection()
-#     suggestions = conn.execute(
-#         'SELECT * FROM suggestions ORDER BY id DESC').fetchall()
-#     plants = conn.execute('SELECT * FROM plants ORDER BY id DESC').fetchall()
-#     conn.close()
-#     # Read view from query param
 #     view = request.args.get('view', 'pending')
-#     return render_template('dashboard.html', suggestions=suggestions, plants=plants, current_view=view)
+#     q = request.args.get('q', '').lower().strip()
+
+#     suggestions = []
+#     plants = []
+
+#     if view == 'pending':
+#         if q:
+#             suggestions = conn.execute("""
+#                 SELECT * FROM suggestions
+#                 WHERE LOWER(plant_name) LIKE ? OR LOWER(description) LIKE ?
+#                       OR LOWER(location) LIKE ? OR LOWER(plant_type) LIKE ?
+#                 ORDER BY id DESC
+#             """, tuple(f"%{q}%" for _ in range(4))).fetchall()
+#         else:
+#             suggestions = conn.execute(
+#                 "SELECT * FROM suggestions ORDER BY id DESC").fetchall()
+
+#     elif view == 'approved':
+#         if q:
+#             plants = conn.execute("""
+#                 SELECT * FROM plants
+#                 WHERE LOWER(plant_name) LIKE ? OR LOWER(description) LIKE ?
+#                       OR LOWER(location) LIKE ? OR LOWER(plant_type) LIKE ?
+#                 ORDER BY id DESC
+#             """, tuple(f"%{q}%" for _ in range(4))).fetchall()
+#         else:
+#             plants = conn.execute(
+#                 "SELECT * FROM plants ORDER BY id DESC").fetchall()
+
+#     conn.close()
+#     return render_template('dashboard.html',
+#                            suggestions=suggestions,
+#                            plants=plants,
+#                            current_view=view)
 
 
 @app.route('/dashboard')
@@ -172,39 +200,61 @@ def dashboard():
     conn = get_db_connection()
     view = request.args.get('view', 'pending')
     q = request.args.get('q', '').lower().strip()
+    page = int(request.args.get('page', 1))
+    per_page = 10
+    offset = (page - 1) * per_page
 
+    total = 0
     suggestions = []
     plants = []
 
     if view == 'pending':
         if q:
-            suggestions = conn.execute("""
+            base_query = """
                 SELECT * FROM suggestions
                 WHERE LOWER(plant_name) LIKE ? OR LOWER(description) LIKE ?
                       OR LOWER(location) LIKE ? OR LOWER(plant_type) LIKE ?
-                ORDER BY id DESC
-            """, tuple(f"%{q}%" for _ in range(4))).fetchall()
+            """
+            params = tuple(f"%{q}%" for _ in range(4))
+            total = conn.execute(
+                f"SELECT COUNT(*) FROM ({base_query})", params).fetchone()[0]
+            suggestions = conn.execute(f"{base_query} ORDER BY id DESC LIMIT ? OFFSET ?",
+                                       params + (per_page, offset)).fetchall()
         else:
+            total = conn.execute(
+                "SELECT COUNT(*) FROM suggestions").fetchone()[0]
             suggestions = conn.execute(
-                "SELECT * FROM suggestions ORDER BY id DESC").fetchall()
+                "SELECT * FROM suggestions ORDER BY id DESC LIMIT ? OFFSET ?",
+                (per_page, offset)).fetchall()
 
     elif view == 'approved':
         if q:
-            plants = conn.execute("""
+            base_query = """
                 SELECT * FROM plants
                 WHERE LOWER(plant_name) LIKE ? OR LOWER(description) LIKE ?
                       OR LOWER(location) LIKE ? OR LOWER(plant_type) LIKE ?
-                ORDER BY id DESC
-            """, tuple(f"%{q}%" for _ in range(4))).fetchall()
+            """
+            params = tuple(f"%{q}%" for _ in range(4))
+            total = conn.execute(
+                f"SELECT COUNT(*) FROM ({base_query})", params).fetchone()[0]
+            plants = conn.execute(f"{base_query} ORDER BY id DESC LIMIT ? OFFSET ?",
+                                  params + (per_page, offset)).fetchall()
         else:
+            total = conn.execute("SELECT COUNT(*) FROM plants").fetchone()[0]
             plants = conn.execute(
-                "SELECT * FROM plants ORDER BY id DESC").fetchall()
+                "SELECT * FROM plants ORDER BY id DESC LIMIT ? OFFSET ?",
+                (per_page, offset)).fetchall()
 
     conn.close()
+    total_pages = ceil(total / per_page)
+
     return render_template('dashboard.html',
                            suggestions=suggestions,
                            plants=plants,
-                           current_view=view)
+                           current_view=view,
+                           current_page=page,
+                           total_pages=total_pages,
+                           q=q)
 
 
 # suggestion updates codes:...........................

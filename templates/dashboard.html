@@ -49,6 +49,18 @@
     {% endif %}
     {% endwith %}
 
+    {% if total_pages > 1 %}
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% for p in range(1, total_pages + 1) %}
+            <li class="page-item {% if p == current_page %}active{% endif %}">
+                <a class="page-link" href="{{ url_for('dashboard', view=current_view, q=q, page=p) }}">{{ p }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    {% endif %}
+
 
     <div id="pending-section">
         <h1 class="mb-4">Pending Uploads</h1>
@@ -199,6 +211,19 @@
         {% endfor %}
     </div>
 
+    <!-- {% if total_pages > 1 %}
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% for p in range(1, total_pages + 1) %}
+            <li class="page-item {% if p == current_page %}active{% endif %}">
+                <a class="page-link" href="{{ url_for('dashboard', view=current_view, q=q, page=p) }}">{{ p }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    {% endif %} -->
+
+
     <div id="approved-section" class="d-none">
         <h1 class="mb-4">Approved Plants</h1>
         <table class="table table-bordered align-middle text-center table-hover">
@@ -232,6 +257,19 @@
             </tbody>
         </table>
     </div>
+
+    {% if total_pages > 1 %}
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% for p in range(1, total_pages + 1) %}
+            <li class="page-item {% if p == current_page %}active{% endif %}">
+                <a class="page-link" href="{{ url_for('dashboard', view=current_view, q=q, page=p) }}">{{ p }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    {% endif %}
+
 
     <script>
         window.dashboardView = "{{ current_view }}";
