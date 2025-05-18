@@ -6,6 +6,12 @@ Dates are in `YYYY-MM-DD` format.
 
 ## Purpose: Record of what has changed over time. (Added/changed/removed/fixed)
 
+## [1.0.1] - 2025-05-18
+
+### Added
+- Pagination and search box filter for admin dashboard and index tour pages.
+
+---
 
 ## [1.0.0] - 2025-05-12
 

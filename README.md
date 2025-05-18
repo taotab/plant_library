@@ -71,7 +71,6 @@ Use `admin / P@ssword123` to log in (if seeded).
 
 ## 🔮 Planned Features
 
-- Search/filter by plant type or location.
 - Tag system (e.g., Medicinal, Edible, etc.)
 - Optional animations or hover info on plant cards.
 - Hashed password storage.
