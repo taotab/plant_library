@@ -2,7 +2,7 @@
 
 ## 📖 Project Overview
 
-A virtual garden to explore and manage information about Ayurvedic plants.  
+A virtual portal to explore and manage information about Ayurvedic plants.  
 Users can submit new plant suggestions, while admins can review, edit, and approve them into a permanent library.
 
 
@@ -60,6 +60,7 @@ Taken 5 plants. *(default experimental)*
 
 - [`CHANGELOG.md`](./CHANGELOG.md): Version history and updates.
 - [`NOTES.md`](./NOTES.md): Dev notes, design decisions, and future ideas.
+- Demonstration link: https://youtu.be/lYxnKBvpMZ8?si=Qh4bm9A_u7vyt2Qb
 
 ---
 
